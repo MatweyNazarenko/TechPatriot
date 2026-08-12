@@ -17,6 +17,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -48,6 +49,18 @@ table {
   border-spacing: 0;
 }
 
+.shown-flex {
+  display: flex;
+}
+
+.shown {
+  display: block;
+}
+
+.unshown {
+  display: none;
+}
+
 html {
   font-size: 16px;
   display: flex;
@@ -56,9 +69,11 @@ html {
 }
 
 .comb {
+  cursor: pointer;
   position: relative;
   width: 300px;
   height: 300px;
+  padding: 4rem 1.5rem;
 }
 .comb__background {
   position: absolute;
@@ -68,9 +83,8 @@ html {
   transform: translate(-50%, -50%);
 }
 .comb__front {
-  height: 100%;
-  padding: 4rem 0;
-  display: none;
+  transform: perspective(600px) rotateY(0deg);
+  display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -81,8 +95,7 @@ html {
   color: #e2eee6;
 }
 .comb__back {
-  height: 100%;
-  padding: 4rem 0;
+  transform: perspective(600px) rotateY(180deg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,8 +104,12 @@ html {
 }
 .comb__back h3 {
   font-size: 1.5rem;
+  font-weight: 700;
   color: #e2eee6;
 }
 .comb__back p {
-  max-width: 300px;
+  font-size: 1rem;
+  color: #e2eee6;
+  max-width: 230px;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */

@@ -3,7 +3,7 @@ import Comb from "./components/comb";
 const App = ()=>{
   return(
     <>
-      <Comb title="HHHH" desc="lorem kFMKmd">HHHH</Comb>
+      <Comb title="HHHH" desc="lorem100">HHHH</Comb>
     </>
   )
 }
