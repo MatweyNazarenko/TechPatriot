@@ -1,0 +1,137 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.comb {
+  cursor: pointer;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+.comb:hover .comb__front {
+  transform: perspective(600px) rotateY(180deg) translate(-50%, -50%);
+}
+.comb:hover .comb__back {
+  transform: perspective(600px) rotateY(0deg) translate(-50%, -50%);
+}
+.comb__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.comb__background img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.comb__front, .comb__back {
+  transition: transform 0.3s cubic-bezier(0.2, 0.85, 0.4, 1.275);
+  transform-origin: center center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden;
+}
+.comb__front {
+  transform: perspective(600px) rotateY(0deg) translate(-50%, -50%);
+}
+.comb__front h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #e2eee6;
+}
+.comb__back {
+  transform: perspective(600px) rotateY(180deg) translate(-50%, -50%);
+  gap: 20px;
+}
+.comb__back h3 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #e2eee6;
+}
+.comb__back p {
+  max-width: 200px;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #e2eee6;
+}
+
+.combs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.combs__content {
+  position: relative;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  scroll-behavior: smooth;
+  background: #151816;
+}
+
+#root {
+  height: 100vh;
+}/*# sourceMappingURL=main.css.map */

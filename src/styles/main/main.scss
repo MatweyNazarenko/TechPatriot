@@ -1,0 +1,16 @@
+@import '../base/reset';
+@import '../base/variables';
+@import '../blocks/combs';
+
+
+html{
+    font-size: 16px;
+}
+body{
+    height: 100vh;
+    scroll-behavior: smooth;
+    background: $main-back;
+}
+#root{
+    height: 100vh;
+}
