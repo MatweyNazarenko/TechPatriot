@@ -1,14 +1,14 @@
 import combBackground from '../../img/comb.png'
-
 const Comb = (props)=>{
     const{
         children,
         titleBack,
         descBack,
+        link
     }=props
     return(
         <div className="comb">
-            <div className="comb__background">
+            <div to={link} className="comb__background">
                 <img src={combBackground} alt="combBackground" />
             </div>
             <div className="comb__front">
