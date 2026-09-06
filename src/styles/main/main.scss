@@ -1,6 +1,6 @@
 @import '../base/reset';
 @import '../base/variables';
-@import '../blocks/combs';
+@import '../components/combs';
 
 
 html{
@@ -13,4 +13,10 @@ body{
 }
 #root{
     height: 100vh;
+}
+
+.titleMain{
+    font-size: 3rem;
+    font-weight: 600;
+    color: $content-text;
 }
