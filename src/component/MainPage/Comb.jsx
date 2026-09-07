@@ -1,13 +1,15 @@
 import combBackground from '../../img/comb.png'
+import { Link } from 'react-router-dom'
 const Comb = (props)=>{
     const{
         children,
         titleBack,
         descBack,
-        link
+        link, 
+        to
     }=props
     return(
-        <div className="comb">
+        <Link to={to} className="comb">
             <div to={link} className="comb__background">
                 <img src={combBackground} alt="combBackground" />
             </div>
@@ -18,7 +20,7 @@ const Comb = (props)=>{
                 <h3>{titleBack}</h3>
                 <p>{descBack}</p>
             </div>
-        </div>
+        </Link>
     )
 }
 
