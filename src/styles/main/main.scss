@@ -1,11 +1,13 @@
 @import '../base/reset';
 @import '../base/variables';
 @import '../components/combs';
+@import '../components/timeline';
 
 
 html{
     font-size: 16px;
 }
+
 body{
     height: 100vh;
     scroll-behavior: smooth;
@@ -19,4 +21,6 @@ body{
     font-size: 3rem;
     font-weight: 600;
     color: $content-text;
+    text-align: center;
+    margin-top: 1.5rem;
 }

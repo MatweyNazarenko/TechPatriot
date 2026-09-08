@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import MainPage from "../MainPage/MainPage";
 import View3dPage from "../3dViewPage/View3dPage";
+import Timeline from "../TimeLine/Timeline";
 
 const AnimatedRoute = (props) => {
     const {
@@ -45,6 +46,20 @@ const AnimatedRoute = (props) => {
                             transition={pageTransition}
                         >
                             <View3dPage />
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/Timeline"
+                    element={
+                        <motion.div
+                            variants={pageVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            transition={pageTransition}
+                        >
+                            <Timeline />
                         </motion.div>
                     }
                 />

@@ -6,7 +6,7 @@ const Combs = ()=>{
             {/* <Comb titleBack="titleBack" descBack="rem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lor">Title</Comb> */}
             <div className="combs__content">
                 <Comb to="/" titleBack="3d View" descBack="rem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lor">3d View</Comb>
-                <Comb to="/view" titleBack="Timeline" descBack="rem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lor">Timeline</Comb>
+                <Comb to="/Timeline" titleBack="Timeline" descBack="rem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lor">Timeline</Comb>
                 <Comb to="/view" titleBack="titleBack" descBack="rem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lor">Title</Comb>
                 <Comb to="/view" titleBack="titleBack" descBack="rem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lor">Title</Comb>
                 <Comb to="/view" titleBack="titleBack" descBack="rem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lor">Title</Comb>
