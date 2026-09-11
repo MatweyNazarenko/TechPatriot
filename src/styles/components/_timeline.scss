@@ -36,11 +36,38 @@
         }
     }
     &__slideBar{
-        width: 100%;
+        margin-top: 3rem;
+        width: 1299px;
+        background: #1e2420;
         display: flex;
         flex-direction: column;
-        &__top{
-            background: linear-gradient(90deg, rgba(46, 66, 51, 0) 0%, rgba(56, 82, 61, 0.6) 50%, rgba(46, 66, 51, 0) 100%);
+        overflow-y: hidden;
+        scrollbar-width: none;
+        .top{
+            width: 300%;
+            padding: 0 5rem;
+            background-color: #000000;
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 0.81rem;
+            color: $content-text;
+            transition: $transition-standart;
+            &:hover{
+                 background: linear-gradient(90deg, rgba(46, 66, 51, 0) 0%, rgba(56, 82, 61, 0.6) 50%, rgba(46, 66, 51, 0) 100%);
+            }
         }
+        .bottom{
+            ul{
+                display: flex;
+                gap: 22.375rem;
+                li{
+                    font-family: $font-family;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    color: #7a9a82;
+                }
+            }
+        }
+
     }
 }

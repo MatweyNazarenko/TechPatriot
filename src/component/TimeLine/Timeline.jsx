@@ -1,5 +1,6 @@
 import Title from "../AllPages/Title"
 import TimelineInfo from "./TimelineInfo.";
+import TimelineSlide from "./TimelineSlide";
 
 const Timeline = ()=>{
     return(
@@ -7,6 +8,7 @@ const Timeline = ()=>{
             <Title>Timeline</Title>
             <div className="timeline">
                 <TimelineInfo></TimelineInfo>
+                <TimelineSlide></TimelineSlide>
             </div>
 
         </>

@@ -160,12 +160,36 @@ input {
   max-width: 600px;
 }
 .timeline__slideBar {
-  width: 100%;
+  margin-top: 3rem;
+  width: 1299px;
+  background: #1e2420;
   display: flex;
   flex-direction: column;
+  overflow-y: hidden;
+  scrollbar-width: none;
 }
-.timeline__slideBar__top {
+.timeline__slideBar .top {
+  width: 300%;
+  padding: 0 5rem;
+  background-color: #000000;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.81rem;
+  color: #e2eee6;
+  transition: 0.5s;
+}
+.timeline__slideBar .top:hover {
   background: linear-gradient(90deg, rgba(46, 66, 51, 0) 0%, rgba(56, 82, 61, 0.6) 50%, rgba(46, 66, 51, 0) 100%);
+}
+.timeline__slideBar .bottom ul {
+  display: flex;
+  gap: 22.375rem;
+}
+.timeline__slideBar .bottom ul li {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #7a9a82;
 }
 
 html {
