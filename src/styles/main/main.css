@@ -167,6 +167,10 @@ input {
   flex-direction: column;
   overflow-y: hidden;
   scrollbar-width: none;
+  scrollbar-color: transparent transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .timeline__slideBar .top {
   width: 300%;
@@ -190,6 +194,10 @@ input {
   font-weight: 700;
   font-size: 1rem;
   color: #7a9a82;
+}
+.timeline__slideBar .bottom ul .active {
+  font-weight: 800;
+  color: #7de89a;
 }
 
 html {

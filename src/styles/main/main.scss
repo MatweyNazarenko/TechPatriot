@@ -1,7 +1,7 @@
-@import '../base/reset';
-@import '../base/variables';
-@import '../components/combs';
-@import '../components/timeline';
+@use '../base/reset';
+@use '../base/variables' as *;
+@use '../components/combs';
+@use '../components/timeline';
 
 
 html{

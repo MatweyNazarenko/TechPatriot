@@ -43,19 +43,20 @@
         flex-direction: column;
         overflow-y: hidden;
         scrollbar-width: none;
-        .top{
-            width: 300%;
-            padding: 0 5rem;
-            background-color: #000000;
-            font-family: $font-family;
-            font-weight: 500;
-            font-size: 0.81rem;
-            color: $content-text;
-            transition: $transition-standart;
-            &:hover{
-                 background: linear-gradient(90deg, rgba(46, 66, 51, 0) 0%, rgba(56, 82, 61, 0.6) 50%, rgba(46, 66, 51, 0) 100%);
-            }
-        }
+        scrollbar-color: transparent transparent;
+        user-select: none;
+        // .top{
+        //     padding: 0 5rem;
+        //     background-color: #000000;
+        //     font-family: $font-family;
+        //     font-weight: 500;
+        //     font-size: 0.81rem;
+        //     color: $content-text;
+        //     transition: $transition-standart;
+        //     &:hover{
+        //          background: linear-gradient(90deg, rgba(46, 66, 51, 0) 0%, rgba(56, 82, 61, 0.6) 50%, rgba(46, 66, 51, 0) 100%);
+        //     }
+        // }
         .bottom{
             ul{
                 display: flex;
@@ -66,8 +67,20 @@
                     font-size: 1rem;
                     color: #7a9a82;
                 }
+                .active{
+                    font-weight: 800;
+                    color: #7de89a;
+                }
             }
         }
 
+    }
+}
+
+.eventPill{
+    p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
