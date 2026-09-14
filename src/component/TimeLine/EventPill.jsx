@@ -4,11 +4,12 @@ const EventPill = (props)=>{
     const{
         children,
         id,
+        leftOffset,
+        topOffset
     } = props;
 
     const widthLevel = 128,
         heightPill = 32;
-    const levelPadding = '8'
 
 
     const EventPillClick = ()=>{
@@ -23,8 +24,11 @@ const EventPill = (props)=>{
             onClick={EventPillClick}
             style={
                 {
+                    position: 'absolute',
+                    left: leftOffset,
+                    top: topOffset,
                     width: widthLevel + 'px',
-                    height: heightPill + 'px'
+                    height: heightPill + 'px',
                 }
             }
         >

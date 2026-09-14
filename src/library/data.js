@@ -24,4 +24,11 @@ export const timeTags = {
       tagTitle: "HHHHHH",
       tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
     },
+    tag5: {
+      tagImgUrl: "../../img/t-34.jpg",
+      tagTimeStart: new Date("1941-07-13"),
+      tagTimeEnd: new Date("1941-07-12"),
+      tagTitle: "HHHHHH",
+      tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
+    },
   };

@@ -21,9 +21,11 @@ export const toMs = (value) => {
 
 export const clamp = (value, min, max)=> {
     if (min > max){
-        min = max + min;
-        max = min - max;
-        min = min - max;
+        // min = max + min;
+        // max = min - max;
+        // min = min - max;
+
+        [min, max] = [max, min];
     }
     if (Number.isNaN(value)) return min;
     return Math.min(max, Math.max(min, value));

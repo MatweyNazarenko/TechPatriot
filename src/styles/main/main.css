@@ -172,12 +172,19 @@ input {
      -moz-user-select: none;
           user-select: none;
 }
+.timeline__slideBar .top {
+  position: relative;
+}
 .timeline__slideBar .bottom {
   padding-bottom: 1rem;
   display: flex;
-  gap: 22rem;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
 }
 .timeline__slideBar .bottom div {
+  flex: 1 0 80px;
+  text-align: center;
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -195,8 +202,11 @@ input {
   border-radius: 10px;
   align-items: center;
   justify-content: center;
+  transform: translate(-50%);
+  white-space: nowrap;
 }
 .eventPill p {
+  margin: 0;
   padding: 4px 6px;
   font-family: "Inter", sans-serif;
   overflow: hidden;
