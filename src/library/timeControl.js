@@ -1,4 +1,4 @@
-const MONTHS_GEN = [
+export const monthsNames = [
   "января",
   "февраля",
   "марта",
@@ -20,7 +20,11 @@ export const toMs = (value) => {
 }
 
 export const clamp = (value, min, max)=> {
-    if (min > max) throw new RangeError("clamp: min > max");
+    if (min > max){
+        min = max + min;
+        max = min - max;
+        min = min - max;
+    }
     if (Number.isNaN(value)) return min;
     return Math.min(max, Math.max(min, value));
 }

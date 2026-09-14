@@ -1,53 +1,3 @@
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-     -moz-text-size-adjust: none;
-          text-size-adjust: none;
-  text-decoration: none;
-}
-
-footer, header, nav, section, main {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-input {
-  -webkit-appearance: none;
-  border-radius: 0;
-}
-
 .comb {
   cursor: pointer;
   position: relative;
@@ -123,6 +73,56 @@ input {
   justify-content: center;
 }
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+  text-decoration: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 .timeline {
   margin-top: 50px;
   display: flex;
@@ -172,32 +172,37 @@ input {
      -moz-user-select: none;
           user-select: none;
 }
-.timeline__slideBar .top {
-  width: 300%;
-  padding: 0 5rem;
-  background-color: #000000;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  font-size: 0.81rem;
-  color: #e2eee6;
-  transition: 0.5s;
-}
-.timeline__slideBar .top:hover {
-  background: linear-gradient(90deg, rgba(46, 66, 51, 0) 0%, rgba(56, 82, 61, 0.6) 50%, rgba(46, 66, 51, 0) 100%);
-}
-.timeline__slideBar .bottom ul {
+.timeline__slideBar .bottom {
+  padding-bottom: 1rem;
   display: flex;
-  gap: 22.375rem;
+  gap: 22rem;
 }
-.timeline__slideBar .bottom ul li {
+.timeline__slideBar .bottom div {
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color: #7a9a82;
 }
-.timeline__slideBar .bottom ul .active {
+.timeline__slideBar .bottom .active {
   font-weight: 800;
   color: #7de89a;
+}
+
+.eventPill {
+  cursor: pointer;
+  background-color: #7a9a82;
+  display: inline-flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.eventPill p {
+  padding: 4px 6px;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #e2eee6;
 }
 
 html {
