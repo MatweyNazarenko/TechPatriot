@@ -12,12 +12,14 @@
   "dependencies": {
     "@react-three/fiber": "^9.7.0",
     "@types/three": "^0.185.4",
+    "accept": "^3.1.3",
     "framer-motion": "^13.2.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-router": "^7.18.3",
     "react-router-dom": "^7.18.3",
-    "three": "^0.185.1"
+    "three": "^0.185.1",
+    "to": "^0.2.9"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

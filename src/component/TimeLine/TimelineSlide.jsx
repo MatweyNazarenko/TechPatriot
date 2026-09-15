@@ -5,7 +5,7 @@ import EventPill from "./EventPill";
 
 const pillWidth = 128;
 const rowHeight = 44;
-const yearMinWidth = 120;
+const yearMinWidth = 300;
 
 const TimelineSlide = (props) => {
   // const years = [];
@@ -23,10 +23,9 @@ const TimelineSlide = (props) => {
 
   const scrollRef = useDragToScroll();
 
-  const events = Object.entries(timeTags)
-    .map(([originalKey, value]) => ({
+  const events = timeTags
+    .map((value) => ({
       id: crypto.randomUUID(),
-      originalKey,
       ...value,
     }))
     .sort((a, b) => a.tagTimeStart.getTime() - b.tagTimeStart.getTime());

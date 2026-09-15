@@ -45,7 +45,7 @@ const AnimatedRoute = (props) => {
                             exit="exit"
                             transition={pageTransition}
                         >
-                            <View3dPage />
+                            <View3dPage/>
                         </motion.div>
                     }
                 />
