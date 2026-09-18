@@ -1,38 +1,43 @@
-import image from '../../img/t-34.jpg'
 
-const TimelineImage = () => {
+const TimelineImage = ({image}) => {
 
-    let imageUrl = image;
-    
-    return(
-        <div className='timeline__image'>
-            {imageUrl ? <img src={imageUrl} alt={`image`}></img> : null}
-        </div>
-    )
-}
+  return (
+    <div className="timeline__image">
+      {image ? <img src={image} alt={`image`}></img> : null}
+    </div>
+  );
+};
 
-const TimelineText = (props)=>{
-    const {
-        children,
-        text
-    } = props;
+const TimelineText = (props) => {
+  const { children, text } = props;
 
+  return (
+    <div className="timeline__text">
+      <h2 className="title">{children}</h2>
+      <p>{text}</p>
+    </div>
+  );
+};
 
-    return(
-        <div className='timeline__text'>
-            <h2 className="title">{children}</h2>
-            <p>{text}</p>
-        </div>
-    )
-}
+const TimelineInfo = (props) => {
+  const { activeEvent, onSelectedEvent } = props;
 
-const TimelineInfo = ()=>{
-    return(
-        <div className="timeline__info">
-            {/* <TimelineImage></TimelineImage> */}
-            <TimelineText text="Lorem Ipsum">Hello, World!</TimelineText>
-        </div>       
-    )
-}
+  if (!activeEvent) {
+    return (
+      <div className="timeline__info">
+        <p>Выберите событие на таймлайне</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="timeline__info">
+      <TimelineImage image={activeEvent.tagImgUrl}></TimelineImage>
+      <TimelineText text={`${activeEvent.tagTitle}`}>
+        {activeEvent.tagText}
+      </TimelineText>
+    </div>
+  );
+};
 
 export default TimelineInfo;

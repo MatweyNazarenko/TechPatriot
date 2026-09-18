@@ -3,17 +3,17 @@ import { color } from "framer-motion";
 const EventPill = (props)=>{
     const{
         children,
-        id,
+        idName,
         leftOffset,
-        topOffset
+        topOffset,
+        widthPx,
+        heightPx,
+        onSelected
     } = props;
 
-    const widthLevel = 128,
-        heightPill = 32;
 
-
-    const EventPillClick = ()=>{
-       console.log(id);
+    const EventPillClick = (id = idName)=>{
+       onSelected?.(id)
     }
 
 
@@ -27,12 +27,18 @@ const EventPill = (props)=>{
                     position: 'absolute',
                     left: leftOffset,
                     top: topOffset,
-                    width: widthLevel + 'px',
-                    height: heightPill + 'px',
+                    heightPx: heightPx,
+                    width: widthPx
                 }
             }
         >
-            <p>{children}</p>
+            <p 
+                style={
+                    {
+                        fontSize: `calc(${heightPx} * 0.42)`
+                    }
+                }
+            >{children}</p>
         </span>
     );
 }
