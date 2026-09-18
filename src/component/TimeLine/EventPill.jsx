@@ -11,9 +11,8 @@ const EventPill = (props)=>{
         onSelected
     } = props;
 
-
-    const EventPillClick = (id = idName)=>{
-       onSelected?.(id);
+    const EventPillClick = ()=>{
+        onSelected?.(idName);
     }
 
 

@@ -1,6 +1,5 @@
 
 const TimelineImage = ({image}) => {
-
   return (
     <div className="timeline__image">
       {image ? <img src={image} alt={`image`}></img> : null}
@@ -24,14 +23,17 @@ const TimelineInfo = (props) => {
   if (!activeEvent) {
     return (
       <div className="timeline__info">
-        <p>Выберите событие на таймлайне</p>
+        <p style={
+          {color: '#fff'}
+        }>Выберите событие на таймлайне</p>
       </div>
     );
   }
 
+
   return (
     <div className="timeline__info">
-      <TimelineImage image={activeEvent.tagImgUrl}></TimelineImage>
+      <TimelineImage image={`${activeEvent.tagImgUrl}`}></TimelineImage>
       <TimelineText text={`${activeEvent.tagText}`}>
         {activeEvent.tagTitle}
       </TimelineText>

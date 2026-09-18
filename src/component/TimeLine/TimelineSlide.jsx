@@ -39,7 +39,7 @@ const TimelineSlide = (props) => {
           }}
         > 
 
-          {positionedEvents.map((item) => (
+          {positionedEvents.map((item) =>(
             <EventPill
               onSelected={selectEvent}
               key={item.id}

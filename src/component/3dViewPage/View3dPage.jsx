@@ -1,5 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useRef } from 'react';
+import CardSlider from './CardSlider';
 
 const View3dPage = () => {
     const AnimatedBox = () => {
@@ -10,8 +11,8 @@ const View3dPage = () => {
         });
 
         return (
-            <mesh ref={box} position={[0, 0, 0]}>
-                <boxGeometry args={[2, 2, 2]} />
+            <mesh ref={box} position={[0, 0.8, 0]}>
+                <boxGeometry args={[1, 1, 1]} />
                 <meshStandardMaterial color="royalblue" />
             </mesh>
         )
@@ -23,6 +24,7 @@ const View3dPage = () => {
                 <ambientLight intensity={5} />
                 <AnimatedBox></AnimatedBox>
             </Canvas>
+            <CardSlider></CardSlider>
         </div>
     )
 }

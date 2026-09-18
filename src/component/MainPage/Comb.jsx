@@ -1,4 +1,4 @@
-import combBackground from '../../img/comb.png'
+import combBackground from '/img/comb.png'
 import { Link } from 'react-router-dom'
 const Comb = (props)=>{
     const{

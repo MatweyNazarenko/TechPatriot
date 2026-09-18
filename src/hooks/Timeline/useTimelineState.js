@@ -1,7 +1,6 @@
 import { useCallback, useState, useMemo } from "react";
 
 const useTimelineState = ( eventsData = [], initialSelectedId = null) => {
-    console.log(eventsData)
 
     const [selected, setSelected] = useState(()=>{
         if(initialSelectedId) return initialSelectedId;

@@ -249,6 +249,42 @@ input {
 .scene3d {
   height: 100vh;
   width: 100%;
+  position: relative;
+}
+.scene3d__cardSlider {
+  padding-bottom: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.scene3d__cardSlider .card {
+  cursor: pointer;
+  width: 200px;
+  height: 100px;
+  backdrop-filter: blur(20px);
+  background: rgba(26, 34, 30, 0.8);
+  border: 1px solid rgba(48, 64, 53, 0.4);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.scene3d__cardSlider .card:hover {
+  background: rgb(26, 34, 30);
+  scale: 1.1;
+}
+.scene3d__cardSlider .card h3 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
 }
 
 html {
