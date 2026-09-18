@@ -23,7 +23,7 @@ const useTimelineLayot = (props) => {
 
   
   const sorted = eventsData
-    .map((item, index) => {
+    .map((item) => {
       const startMs = item.tagTimeStart.getTime();
       let endMs = item.tagTimeEnd ? item.tagTimeEnd.getTime() : startMs;
 
@@ -32,7 +32,6 @@ const useTimelineLayot = (props) => {
       }
 
       return {
-        id:crypto.randomUUID() || `evt-${index}`,
         ...item,
         startMs,
         endMs: Math.max(endMs, startMs + dayToMs),
@@ -75,7 +74,6 @@ const useTimelineLayot = (props) => {
 
   let minRowGap = 4;
 
-  console.log(containerHeight);
   let basePillHeight = Math.floor(( containerHeight - (maxRowsCount * minRowGap) ) / maxRowsCount );
 
 

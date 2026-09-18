@@ -13,7 +13,7 @@ const EventPill = (props)=>{
 
 
     const EventPillClick = (id = idName)=>{
-       onSelected?.(id)
+       onSelected?.(id);
     }
 
 

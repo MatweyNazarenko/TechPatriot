@@ -10,7 +10,7 @@ const height_timeline = 350;
 
 const TimelineSlide = (props) => {
   const{
-    onSelectedEvent
+    selectEvent
   }=props;
 
   const scrollRef = useDragToScroll();
@@ -41,7 +41,7 @@ const TimelineSlide = (props) => {
 
           {positionedEvents.map((item) => (
             <EventPill
-              onSelected={onSelectedEvent}
+              onSelected={selectEvent}
               key={item.id}
               idName={item.id}
               leftOffset={`${item.leftPx}px`}

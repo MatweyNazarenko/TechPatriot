@@ -20,8 +20,7 @@ const TimelineText = (props) => {
 };
 
 const TimelineInfo = (props) => {
-  const { activeEvent, onSelectedEvent } = props;
-
+  const { activeEvent } = props;
   if (!activeEvent) {
     return (
       <div className="timeline__info">
@@ -33,8 +32,8 @@ const TimelineInfo = (props) => {
   return (
     <div className="timeline__info">
       <TimelineImage image={activeEvent.tagImgUrl}></TimelineImage>
-      <TimelineText text={`${activeEvent.tagTitle}`}>
-        {activeEvent.tagText}
+      <TimelineText text={`${activeEvent.tagText}`}>
+        {activeEvent.tagTitle}
       </TimelineText>
     </div>
   );

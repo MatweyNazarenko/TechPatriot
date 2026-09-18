@@ -13,7 +13,7 @@ const Timeline = ()=>{
             <Title>Timeline</Title>
             <div className="timeline">
                 <TimelineInfo activeEvent={activeEvent}></TimelineInfo>
-                <TimelineSlide onSelectedEvent={selectEvent}></TimelineSlide>
+                <TimelineSlide selectEvent={selectEvent}></TimelineSlide>
             </div>
 
         </>

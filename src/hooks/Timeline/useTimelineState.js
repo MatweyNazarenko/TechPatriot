@@ -1,10 +1,7 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useMemo } from "react";
 
-const useTimelineState = (props) => {
-    const {
-        eventsData = [],
-        initialSelectedId = null
-    } = props;
+const useTimelineState = ( eventsData = [], initialSelectedId = null) => {
+    console.log(eventsData)
 
     const [selected, setSelected] = useState(()=>{
         if(initialSelectedId) return initialSelectedId;
@@ -12,13 +9,13 @@ const useTimelineState = (props) => {
     });
 
     const selectEvent = useCallback((id) =>{
-        if(!id) return;
+        if(!id) return null;
         setSelected(id)
     }, []) ;
 
-    const activeEvent = ()=>{
+    const activeEvent = useMemo(()=>{
         return eventsData.find((event)=>event.id === selected) || null;
-    }
+    }, [eventsData, selected])
 
     return {
         selected,

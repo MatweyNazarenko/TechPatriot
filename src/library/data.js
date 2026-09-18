@@ -1,5 +1,6 @@
 export const timeTags = [
   {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1941-07-12"),
     tagTimeEnd: new Date("1941-07-12"),
@@ -7,6 +8,7 @@ export const timeTags = [
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1942-07-12"),
     tagTimeEnd: new Date("1942-07-12"),
@@ -14,6 +16,7 @@ export const timeTags = [
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
     {
+      id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1942-07-12"),
     tagTimeEnd: new Date("1942-07-12"),
@@ -21,32 +24,21 @@ export const timeTags = [
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1952-07-12"),
     tagTitle: "HHHHHH",
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1935-07-12"),
     tagTitle: "HHHHHH",
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
-    tagImgUrl: "../../img/t-34.jpg",
-    tagTimeStart: new Date("1941-07-13"),
-    tagTimeEnd: new Date("1941-07-15"),
-    tagTitle: "HHHHHH",
-    tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
-  },
-    {
-    tagImgUrl: "../../img/t-34.jpg",
-    tagTimeStart: new Date("1941-07-13"),
-    tagTimeEnd: new Date("1941-07-15"),
-    tagTitle: "HHHHHH",
-    tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
-  },
-  {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1941-07-13"),
     tagTimeEnd: new Date("1941-07-15"),
@@ -54,6 +46,7 @@ export const timeTags = [
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1941-07-13"),
     tagTimeEnd: new Date("1941-07-15"),
@@ -61,6 +54,7 @@ export const timeTags = [
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1941-07-13"),
     tagTimeEnd: new Date("1941-07-15"),
@@ -68,6 +62,7 @@ export const timeTags = [
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1941-07-13"),
     tagTimeEnd: new Date("1941-07-15"),
@@ -75,6 +70,7 @@ export const timeTags = [
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1941-07-13"),
     tagTimeEnd: new Date("1941-07-15"),
@@ -82,6 +78,15 @@ export const timeTags = [
     tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
   },
   {
+    id: crypto.randomUUID(),
+    tagImgUrl: "../../img/t-34.jpg",
+    tagTimeStart: new Date("1941-07-13"),
+    tagTimeEnd: new Date("1941-07-15"),
+    tagTitle: "HHHHHH",
+    tagText: "Hhhhhhhhhhhhhhhhhhhhhhhh",
+  },
+  {
+    id: crypto.randomUUID(),
     tagImgUrl: "../../img/t-34.jpg",
     tagTimeStart: new Date("1941-07-13"),
     tagTimeEnd: new Date("1941-07-15"),
