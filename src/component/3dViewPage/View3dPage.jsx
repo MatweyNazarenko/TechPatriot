@@ -1,31 +1,38 @@
 import { Canvas, useFrame } from '@react-three/fiber'
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import CardSlider from './CardSlider';
+import ModalObject from './3d/ModalObject';
+import { Environment, OrbitControls } from '@react-three/drei';
+const overallScale = 0.01;
 
 const View3dPage = () => {
-    const AnimatedBox = () => {
-        const box = useRef();
-
-        useFrame(({clock}) => {
-            box.current.rotation.x = Math.sin(clock.elapsedTime);
-        });
-
-        return (
-            <mesh ref={box} position={[0, 0.8, 0]}>
-                <boxGeometry args={[1, 1, 1]} />
-                <meshStandardMaterial color="royalblue" />
-            </mesh>
-        )
-    }
 
     return (
         <div className='scene3d'>
             <Canvas className="canvas3D">
-                <ambientLight intensity={5} />
-                <AnimatedBox></AnimatedBox>
+                <Suspense 
+                    fallback={null}>
+                    <ModalObject scale={0.01} overallScale={overallScale}></ModalObject>
+                    <Environment preset='sunset'></Environment>
+                    <OrbitControls
+                        minDistance={1}
+                        maxDistance={15}
+                        minPolarAngle={0}
+                        maxPolarAngle={Math.PI / 2} 
+                        minAzimuthAngle={-Math.PI / 4}
+                        maxAzimuthAngle={Math.PI / 4}
+
+                        // enablePan={false}
+                        // enableDamping={true}
+                        // dampingFactor={0.05}    
+                    ></OrbitControls>
+                </Suspense>
             </Canvas>
+            
             <CardSlider></CardSlider>
         </div>
     )
 }
 export default View3dPage;
+
+

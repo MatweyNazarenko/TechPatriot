@@ -24,7 +24,7 @@ const useTimelineLayot = (props) => {
   
   const sorted = eventsData
     .map((item) => {
-      const startMs = item.tagTimeStart.getTime();
+      let startMs = item.tagTimeStart.getTime();
       let endMs = item.tagTimeEnd ? item.tagTimeEnd.getTime() : startMs;
 
       if (endMs < startMs) {
