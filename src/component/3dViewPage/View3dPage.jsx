@@ -1,34 +1,28 @@
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Suspense, useRef } from 'react';
+import { Suspense, useRef, useState } from 'react';
 import CardSlider from './CardSlider';
 import ModalObject from './3d/ModalObject';
-import { Environment, OrbitControls } from '@react-three/drei';
-const overallScale = 0.01;
+import { Environment } from '@react-three/drei';
+import CameraObject from './3d/CameraObject';
 
 const View3dPage = () => {
+
+    const [controlStates, setControlStates]=useState({
+        autoRotatate: false,
+        autoRotateSpeed: 1,
+        scale: 0.01,
+    });
 
     return (
         <div className='scene3d'>
             <Canvas className="canvas3D">
                 <Suspense 
                     fallback={null}>
-                    <ModalObject scale={0.01} overallScale={overallScale}></ModalObject>
+                    <ModalObject scale={controlStates.scale} overallScale={controlStates.scale}></ModalObject>
                     <Environment preset='sunset'></Environment>
-                    <OrbitControls
-                        minDistance={1}
-                        maxDistance={15}
-                        minPolarAngle={0}
-                        maxPolarAngle={Math.PI / 2} 
-                        minAzimuthAngle={-Math.PI / 4}
-                        maxAzimuthAngle={Math.PI / 4}
-
-                        // enablePan={false}
-                        // enableDamping={true}
-                        // dampingFactor={0.05}    
-                    ></OrbitControls>
                 </Suspense>
+                <CameraObject cameraPreset="front" cameraDistance={4} controlStates={controlStates}></CameraObject>
             </Canvas>
-            
             <CardSlider></CardSlider>
         </div>
     )
