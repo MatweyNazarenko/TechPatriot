@@ -4,6 +4,7 @@ import CardSlider from './CardSlider';
 import ModalObject from './3d/ModalObject';
 import { Environment } from '@react-three/drei';
 import CameraObject from './3d/CameraObject';
+import SettingBar from './SettingBar/SettingBar';
 
 const View3dPage = () => {
 
@@ -24,6 +25,7 @@ const View3dPage = () => {
                 <CameraObject cameraPreset="front" cameraDistance={4} controlStates={controlStates}></CameraObject>
             </Canvas>
             <CardSlider></CardSlider>
+            <SettingBar></SettingBar>
         </div>
     )
 }
