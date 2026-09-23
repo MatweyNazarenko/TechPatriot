@@ -1,9 +1,28 @@
 import { IoIosArrowUp } from "react-icons/io";
 
-import styles from './SettingBar.module.css'
-import { style } from "framer-motion/client";
+import styles from './SettingBar.module.css';
 
-const SettingBar = () => {
+const SettingBar = (props) => {
+
+    const{
+        controlStates,
+        setControlStates,
+    } = props;
+
+    const autoRotateChange = (event)=>{
+        setControlStates((prev)=>({
+            ...prev,
+            autoRotate: event.target.checked,
+        }))
+    }
+
+    const rotateSpeed = (d)=>{
+        setControlStates((prev)=>({
+            ...prev,
+            autoRotateSpeed: Math.min(10, Math.max(0.5, prev.autoRotateSpeed + d)),
+        }))
+    }
+
     return (
         <div className={styles.settingBar}>
             <div className={styles.mainBtn}>
@@ -12,7 +31,7 @@ const SettingBar = () => {
             <div className={styles.settingPanel}>
                 <div className={styles.rotEnable}>
                     <h3 className={styles.title}>Speed</h3>
-                    <input type="checkbox" id="rotEnable" />
+                    <input type="checkbox" id="rotEnable" onChange={autoRotateChange} checked={controlStates.autoRotate}/>
                     <label htmlFor="rotEnable">
                         <div className={styles.checker}>
                         </div>
@@ -20,8 +39,14 @@ const SettingBar = () => {
                 </div>
                 <div className={styles.speedRot}>
                     <div className={styles.numBlock}>
-                        1
+                        {controlStates.autoRotateSpeed}
                     </div>
+                    <button onClick={()=>rotateSpeed(0.5)}>
+                        +
+                    </button>
+                    <button onClick={()=>rotateSpeed(-0.5)}>
+                        -
+                    </button>
                 </div>
             </div>
         </div>

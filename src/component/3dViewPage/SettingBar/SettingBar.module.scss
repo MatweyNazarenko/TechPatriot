@@ -2,7 +2,7 @@
     position: absolute;
     top: 50px;
     right: 50px;
-    border: 1px solid rgba(48, 64, 53, 0.4);
+    border: 1px solid rgba(87, 119, 97, 0.541);
     border-radius: 1.5rem;
     padding: 0.75rem 0.5rem;
     display: flex;
@@ -127,6 +127,24 @@
 
 .speedRot {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    button{
+        border: 1px solid rgba(48, 64, 53, 0.4);
+        border-radius: 10px;
+        background: rgba(26, 34, 30, 0.8);
+        font-weight: 700;
+        font-size: 1rem;
+        text-align: center;
+        color: #7a9a82;
+        width: 100%;
+        padding: 0.5rem 0;
+        &:hover{
+            color: #7fac8a;
+            background: rgba(22, 26, 24, 0.322);
+        }
+    }
 }
 
 .numBlock {
@@ -134,9 +152,10 @@
     border-radius: 10px;
     background: rgba(26, 34, 30, 0.8);
     font-weight: 700;
-    font-size: 12px;
+    font-size: 0.75rem;
     text-align: center;
     color: #7a9a82;
     width: 100%;
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
 }
+
