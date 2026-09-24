@@ -250,8 +250,10 @@ input {
   height: 100vh;
   width: 100%;
   position: relative;
+  pointer-events: none;
 }
 .scene3d__cardSlider {
+  pointer-events: auto;
   padding-bottom: 100px;
   position: absolute;
   bottom: 0;
@@ -285,6 +287,52 @@ input {
   font-weight: 700;
   font-size: 1.25rem;
   color: #fff;
+}
+.scene3d__modelUI {
+  pointer-events: auto;
+  z-index: 10;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.scene3d__modelUI .title {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.scene3d__modelUI .title h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+}
+.scene3d__modelUI .title p {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+}
+.scene3d__modelUI .arrowBtn {
+  pointer-events: auto;
+  cursor: pointer;
+  background-color: rgba(14, 20, 16, 0.8);
+  border-radius: 50%;
+  border: 1.5px solid rgba(62, 95, 73, 0.4);
+  padding: 1rem;
+  transition: 0.1s;
+}
+.scene3d__modelUI .arrowBtn svg {
+  color: #fff;
+}
+.scene3d__modelUI .arrowBtn:hover {
+  transform: scale(1.1);
 }
 
 html {

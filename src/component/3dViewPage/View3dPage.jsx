@@ -1,10 +1,8 @@
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Suspense, useRef, useState } from 'react';
+import { useState } from 'react';
 import CardSlider from './CardSlider';
-import ModalObject from './3d/ModalObject';
-import { Environment } from '@react-three/drei';
-import CameraObject from './3d/CameraObject';
 import SettingBar from './SettingBar/SettingBar';
+import ModelViewer from './3d/ModelViewer';
+import ModelObject from './3d/ModelObject';
 
 const View3dPage = () => {
 	const [controlStates, setControlStates] = useState({
@@ -13,22 +11,27 @@ const View3dPage = () => {
 		scale: 0.01,
 	});
 
+	const overallScale = 1;
+
+	const modelsList = [
+		{
+			title: 'LoremIpsum',
+			path: '/models/b.fbx',
+			model: ModelObject,
+		},
+		{
+			title: 'Hello, World!',
+			path: '/models/n.fbx',
+			model: ModelObject,
+		},
+	];
+
 	return (
 		<div className='scene3d'>
-			<Canvas className='canvas3D'>
-				<Suspense fallback={null}>
-					<ModalObject
-						scale={controlStates.scale}
-						overallScale={controlStates.scale}
-					></ModalObject>
-					<Environment preset='sunset'></Environment>
-				</Suspense>
-				<CameraObject
-					cameraPreset='front'
-					cameraDistance={4}
-					controlStates={controlStates}
-				></CameraObject>
-			</Canvas>
+			<ModelViewer 
+				models={modelsList}
+				controlStates={controlStates}
+			></ModelViewer>
 			<CardSlider></CardSlider>
 			<SettingBar
 				controlStates={controlStates}

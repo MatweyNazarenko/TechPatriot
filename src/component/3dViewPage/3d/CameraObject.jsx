@@ -73,11 +73,11 @@ const CameraObject = (props) => {
             makeDefault
 			enableDamping={true}
 			dampingFactor={0.05}
-			minDistance={0.4}
-			maxDistance={20}
-			maxPolarAngle={Math.PI}
-            autoRotate={controlStates.autoRotate}
-            autoRotateSpeed={controlStates.autoRotateSpeed}
+			// minDistance={0.4}
+			// maxDistance={20}
+			// maxPolarAngle={Math.PI}
+            // autoRotate={controlStates.autoRotate}
+            // autoRotateSpeed={controlStates.autoRotateSpeed}
 		></OrbitControls>
 	);
 };

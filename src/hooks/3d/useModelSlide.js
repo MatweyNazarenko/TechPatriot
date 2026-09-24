@@ -1,49 +1,54 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
-const useModalSlide = (totalItems) => {
-	const [currentItem, setCurrentItem] = useState();
+const useModalSlide = (totalItems = 0) => {
+    const [currentItem, setCurrentItem] = useState(0);
 
-	const totalRef = useRef(totalItems);
-	totalRef.current = totalItems;
-
-	const nextClick = () => {
-		if (totalRef.current <= 0) return;
-		setCurrentItem((prev) => (prev + 1) % totalRef.current);
-	};
-
-	const prevClick = () => {
-		if (totalRef.current <= 0) return;
-		setCurrentItem(
-			(prev) => (prev - 1 + totalItems) % totalRef.current
-		);
-	};
-
-	const goToItem = () => {
-		if (totalRef.current <= 0) return;
-		if (index >= 0 && index < totalRef.current) {
-			setCurrentIndex(index);
-		}
-	};
-
-    useEffect(()=>{
-        const handleKeyDown = (event)=>{
-            if(['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return
-
-            if(event.key === 'ArrowRight') nextClick();
-            if(event.key === 'ArrowLeft') prevClick();
-
-            window.addEventListener('keydown', handleKeyDown);
-
-            return ()=> window.removeEventListener('keydown', handleKeyDown);
+    useEffect(() => {
+        if (totalItems > 0 && currentItem >= totalItems) {
+            setCurrentItem(0);
         }
-    }, [nextClick, prevClick])
+    }, [totalItems, currentItem]);
+
+    const nextClick = useCallback(() => {
+        if (totalItems <= 0) return;
+        setCurrentItem((prev) => (prev + 1) % totalItems);
+    }, [totalItems]);
+
+    const prevClick = useCallback(() => {
+        if (totalItems <= 0) return;
+        setCurrentItem((prev) => (prev - 1 + totalItems) % totalItems);
+    }, [totalItems]);
+
+    const goToItem = useCallback(
+        (index) => {
+            if (totalItems <= 0) return;
+            if (index >= 0 && index < totalItems) {
+                setCurrentItem(index);
+            }
+        },
+        [totalItems]
+    );
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) {
+                return;
+            }
+
+            if (event.key === 'ArrowRight') nextClick();
+            if (event.key === 'ArrowLeft') prevClick();
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [nextClick, prevClick]);
 
     return {
         nextClick,
         prevClick,
         goToItem,
-        currentItem
-    }
+        currentItem,
+    };
 };
 
 export default useModalSlide;

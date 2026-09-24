@@ -8,7 +8,9 @@
     height: 100vh;
     width: 100%;
     position: relative;
+    pointer-events: none;
     &__cardSlider{
+        pointer-events: auto;
         padding-bottom: 100px;
         position: absolute;
         bottom: 0;
@@ -40,6 +42,52 @@
                 font-weight: 700;
                 font-size: 1.25rem;
                 color: #fff;
+            }
+        }
+    }
+    &__modelUI{
+        pointer-events: auto;
+        z-index: 10;
+        display: flex;
+        gap: 4rem;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        .title{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            h2{
+                font-family: $font-family;
+                font-weight: 800;
+                font-size: 1.5rem;
+                text-align: center;
+                color: #fff;
+            }
+            p{
+                font-family: $font-family;
+                font-weight: 600;
+                font-size: 1rem;
+                text-align: center;
+                color: #fff;
+            }
+        }
+        .arrowBtn{
+            pointer-events: auto;
+            cursor: pointer;
+            background-color: rgba(14, 20, 16, 0.8);
+            border-radius: 50%;
+            border: 1.50px solid rgba(62, 95, 73, 0.4);
+            padding: 1rem;
+            transition: .1s;
+            svg{
+                color: #fff;
+            }
+            &:hover{
+                transform: scale(1.1);
             }
         }
     }
