@@ -76,8 +76,8 @@ const CameraObject = (props) => {
 			// minDistance={0.4}
 			// maxDistance={20}
 			// maxPolarAngle={Math.PI}
-            // autoRotate={controlStates.autoRotate}
-            // autoRotateSpeed={controlStates.autoRotateSpeed}
+            autoRotate={controlStates.autoRotate}
+            autoRotateSpeed={controlStates.autoRotateSpeed}
 		></OrbitControls>
 	);
 };
