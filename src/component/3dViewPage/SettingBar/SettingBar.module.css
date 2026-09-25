@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+  pointer-events: auto;
 }
 .settingBar:hover .mainBtn {
   transform: rotate(180deg);

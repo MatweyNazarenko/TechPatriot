@@ -6,7 +6,7 @@ import ModelObject from './3d/ModelObject';
 
 const View3dPage = () => {
 	const [controlStates, setControlStates] = useState({
-		autoRotate: false,
+		autoRotate: true,
 		autoRotateSpeed: 1,
 		scale: 0.01,
 	});

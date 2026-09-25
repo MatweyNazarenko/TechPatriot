@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
     transition: .3s;
-
+    pointer-events: auto;
     &:hover {
         .mainBtn {
             transform: rotate(180deg);
