@@ -1,15 +1,15 @@
-@use '../base/variables' as *;
+@use "../base/variables" as *;
 
-.canvas3D{
+.canvas3D {
     width: 100%;
     height: 100vh;
 }
-.scene3d{
+.scene3d {
     height: 100vh;
     width: 100%;
     position: relative;
     pointer-events: none;
-    &__cardSlider{
+    &__cardSlider {
         pointer-events: auto;
         padding-bottom: 100px;
         position: absolute;
@@ -20,32 +20,47 @@
         align-items: center;
         justify-content: center;
         gap: 20px;
-        .card{
+        .card {
             cursor: pointer;
-            width: 200px;
-            height: 100px;
             backdrop-filter: blur(20px);
             background: rgba(26, 34, 30, 0.8);
             border: 1px solid rgba(48, 64, 53, 0.4);
             border-radius: 1rem;
+            transition: $transition-standart - 0.2;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: $transition-standart - 0.2;
-            &:hover{
+            align-items: start;
+            padding: 30px 40px;
+            gap: 25px;
+            position: relative;
+            &:hover {
                 background: rgba(26, 34, 30, 1);
                 scale: 1.1;
             }
-            h3{
+            p {
+                font-family: $font-family;
+                font-weight: 600;
+                font-size: 0.69rem;
+                text-transform: uppercase;
+                color: #7a9a82;
+            }
+            h3 {
                 font-family: $font-family;
                 font-weight: 700;
                 font-size: 1.25rem;
                 color: #fff;
             }
+            .icon {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                svg {
+                    color: #7a9a82;
+                }
+            }
         }
     }
-    &__modelUI{
+    &__modelUI {
         pointer-events: auto;
         z-index: 10;
         display: flex;
@@ -56,18 +71,18 @@
         top: 2rem;
         left: 50%;
         transform: translate(-50%, 0);
-        .title{
+        .title {
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            h2{
+            h2 {
                 font-family: $font-family;
                 font-weight: 800;
                 font-size: 1.5rem;
                 text-align: center;
                 color: #fff;
             }
-            p{
+            p {
                 font-family: $font-family;
                 font-weight: 600;
                 font-size: 1rem;
@@ -75,18 +90,18 @@
                 color: #fff;
             }
         }
-        .arrowBtn{
+        .arrowBtn {
             pointer-events: auto;
             cursor: pointer;
             background-color: rgba(14, 20, 16, 0.8);
             border-radius: 50%;
-            border: 1.50px solid rgba(62, 95, 73, 0.4);
+            border: 1.5px solid rgba(62, 95, 73, 0.4);
             padding: 1rem;
-            transition: .1s;
-            svg{
+            transition: 0.1s;
+            svg {
                 color: #fff;
             }
-            &:hover{
+            &:hover {
                 transform: scale(1.1);
             }
         }

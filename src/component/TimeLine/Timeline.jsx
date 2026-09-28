@@ -1,5 +1,5 @@
 import useTimelineState from "../../hooks/Timeline/useTimelineState";
-import { timeTags } from "../../library/data";
+import { timeTags } from "../../library/data.jsx";
 import Title from "../AllPages/Title"
 import TimelineInfo from "./TimelineInfo.";
 import TimelineSlide from "./TimelineSlide";

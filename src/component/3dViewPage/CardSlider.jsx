@@ -1,11 +1,25 @@
 import Card from "./Card";
 
-const CardSlider = ()=>{
-    return(
+
+const CardSlider = (props) => {
+
+    const {
+        modelInfo
+    } = props;
+
+    const cardsInfo = modelInfo.info;
+
+    return (
         <div className="scene3d__cardSlider">
-            <Card title="Hello!"></Card>
-            <Card title="Hello!"></Card>
-            <Card title="Hello!"></Card>
+            {cardsInfo.map((item) => {
+
+                return (<Card
+                key={crypto.randomUUID()}
+                    title={item.title}
+                    content={item.content}
+                    Icon={item.icon}
+                ></Card>)
+            })}
         </div>
     )
 }

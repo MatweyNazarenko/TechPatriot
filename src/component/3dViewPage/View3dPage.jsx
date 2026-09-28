@@ -2,8 +2,7 @@ import { useState } from 'react';
 import CardSlider from './CardSlider';
 import SettingBar from './SettingBar/SettingBar';
 import ModelViewer from './3d/ModelViewer';
-import ModelObject from './3d/ModelObject';
-
+import { modelsList } from '../../library/data';
 const View3dPage = () => {
 	const [controlStates, setControlStates] = useState({
 		autoRotate: false,
@@ -13,18 +12,7 @@ const View3dPage = () => {
 
 	const overallScale = 1;
 
-	const modelsList = [
-		{
-			title: 'LoremIpsum',
-			path: '/models/b.fbx',
-			model: ModelObject,
-		},
-		{
-			title: 'Hello, World!',
-			path: '/models/n.fbx',
-			model: ModelObject,
-		},
-	];
+	
 
 	return (
 		<div className='scene3d'>
@@ -32,7 +20,6 @@ const View3dPage = () => {
 				models={modelsList}
 				controlStates={controlStates}
 			></ModelViewer>
-			<CardSlider></CardSlider>
 			<SettingBar
 				controlStates={controlStates}
 				setControlStates={setControlStates}

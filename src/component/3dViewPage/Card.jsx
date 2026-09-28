@@ -1,11 +1,17 @@
 const Card = (props)=>{
     const {
-        title
+        title,
+        content,
+        Icon
     }= props;
     
     return(
         <div className="card">
-            <h3>{title}</h3>
+            <p>{title}</p>
+            <h3>{content}</h3>
+            <div className="icon">
+                <Icon></Icon>
+            </div>
         </div>
     )
 }
