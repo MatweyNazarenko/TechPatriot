@@ -1,0 +1,13 @@
+@use '../base/variables' as *;
+
+.quiz{
+    &__navigation{
+        display: flex;
+        .taskItem{
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: 11px;
+            color: #718078;
+        }
+    }
+}
