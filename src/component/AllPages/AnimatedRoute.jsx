@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import MainPage from "../MainPage/MainPage";
 import View3dPage from "../3dViewPage/View3dPage";
 import Timeline from "../TimeLine/Timeline";
-import MainMenuTests from "../TestsPage/MainMenuTests";
+import PersonsMain from "../Persons/personsMain";
 
 const AnimatedRoute = (props) => {
     const {
@@ -65,7 +65,7 @@ const AnimatedRoute = (props) => {
                     }
                 />
                 <Route
-                    path="/tests"
+                    path="/persons"
                     element={
                         <motion.div
                             variants={pageVariants}
@@ -74,7 +74,7 @@ const AnimatedRoute = (props) => {
                             exit="exit"
                             transition={pageTransition}
                         >
-                            <MainMenuTests/>
+                            <PersonsMain></PersonsMain>
                         </motion.div>
                     }
                 />

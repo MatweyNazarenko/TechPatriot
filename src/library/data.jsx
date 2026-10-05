@@ -1,5 +1,5 @@
 import ModelObject from "../component/3dViewPage/3d/ModelObject";
-import { GiResize } from "react-icons/gi"; 
+import { GiResize } from "react-icons/gi";
 export const timeTags = [
   {
     id: crypto.randomUUID(),
@@ -106,27 +106,27 @@ export const modelsList = [
       {
         title: 'Size',
         content: '240x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       },
       {
         title: 'Size',
         content: '240x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       },
       {
         title: 'Size',
         content: '240x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       },
       {
         title: 'Size',
         content: '240x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       },
       {
         title: 'Size',
         content: '240x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       }
     ],
   },
@@ -138,28 +138,44 @@ export const modelsList = [
       {
         title: 'Size',
         content: '24x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       },
       {
         title: 'Size',
         content: '240x24990x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       },
       {
         title: 'Size',
         content: '240x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       },
       {
         title: 'Size',
         content: '240x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       },
       {
         title: 'Size',
         content: '240x240x240',
-        icon: ()=><GiResize />,
+        icon: () => <GiResize />,
       }
     ],
   },
 ];
+
+
+
+
+export const personsList = [
+  {
+    image: null,
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    who: ['kkk', 'lllll'],
+  },
+
+]
