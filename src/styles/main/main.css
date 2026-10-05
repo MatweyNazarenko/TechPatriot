@@ -350,6 +350,29 @@ input {
   transform: scale(1.1);
 }
 
+.person {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 20px;
+}
+.person__card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.person__card .text h3 {
+  color: #F4F8F5;
+}
+.quiz__navigation {
+  display: flex;
+}
+.quiz__navigation .taskItem {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  color: #718078;
+}
+
 html {
   font-size: 16px;
 }

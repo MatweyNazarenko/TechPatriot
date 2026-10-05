@@ -74,7 +74,7 @@ const AnimatedRoute = (props) => {
                             exit="exit"
                             transition={pageTransition}
                         >
-                            <TestsMain></TestsMain>
+                            <PersonsMain></PersonsMain>
                         </motion.div>
                     }
                 />
@@ -88,7 +88,7 @@ const AnimatedRoute = (props) => {
                             exit="exit"
                             transition={pageTransition}
                         >
-                            <PersonsMain></PersonsMain>
+                            <TestsMain></TestsMain>
                         </motion.div>
                     }
                 />
