@@ -143,7 +143,7 @@ input {
   margin-bottom: 4px;
 }
 .timeline__tick-label {
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   color: #7a9a82;
@@ -167,14 +167,14 @@ input {
   gap: 1rem;
 }
 .timeline__text .title {
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   text-align: center;
   color: #e2eee6;
 }
 .timeline__text p {
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 300;
   font-size: 1.5rem;
   text-align: center;
@@ -211,7 +211,7 @@ input {
 }
 .timeline__slideBar .bottom div {
   text-align: center;
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 700;
   font-size: 1rem;
   color: #7a9a82;
@@ -234,7 +234,7 @@ input {
 .eventPill p {
   margin: 0;
   padding: 4px 6px;
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -283,14 +283,14 @@ input {
   scale: 1.1;
 }
 .scene3d__cardSlider .card p {
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 600;
   font-size: 0.69rem;
   text-transform: uppercase;
   color: #7a9a82;
 }
 .scene3d__cardSlider .card h3 {
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 700;
   font-size: 1.25rem;
   color: #fff;
@@ -321,14 +321,14 @@ input {
   gap: 2rem;
 }
 .scene3d__modelUI .title h2 {
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 800;
   font-size: 1.5rem;
   text-align: center;
   color: #fff;
 }
 .scene3d__modelUI .title p {
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 600;
   font-size: 1rem;
   text-align: center;
@@ -350,24 +350,40 @@ input {
   transform: scale(1.1);
 }
 
-.person {
+.persons {
   display: flex;
   flex-wrap: wrap;
   gap: 30px 20px;
 }
-.person__card {
+.persons__card {
   display: flex;
   flex-direction: column;
   position: relative;
+  background-color: #121a16;
 }
-.person__card .text h3 {
+.persons__card .text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.persons__card .text h3 {
+  font-family: "Google Sans", sans-serif;
   color: #F4F8F5;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
+.persons__card .text p {
+  font-family: "Google Sans", sans-serif;
+  color: #17211C;
+  font-weight: 400;
+  font-size: 1.15rem;
+}
+
 .quiz__navigation {
   display: flex;
 }
 .quiz__navigation .taskItem {
-  font-family: "Inter", sans-serif;
+  font-family: "Google Sans", sans-serif;
   font-weight: 700;
   font-size: 11px;
   color: #718078;

@@ -1,20 +1,40 @@
-@use '../base/variables' as *;
+@use '../base/variables'as *;
 
-.person{
+.persons {
     display: flex;
     flex-wrap: wrap;
     gap: 30px 20px;
-    &__card{
+
+    &__card {
         display: flex;
         flex-direction: column;
         position: relative;
-        .text{
-            h3{
-                color: #F4F8F5;
-            }
-            p{
+        background-color: #121a16;
 
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            h3 {
+                font-family: $font-family;
+                color: #F4F8F5;
+                font-weight: 600;
+                font-size: 1.5rem;
             }
+
+            p {
+                font-family: $font-family;
+                color: #17211C;
+                font-weight: 400;
+                font-size: 1.15rem;
+            }
+
+            // ul {
+            //     .title {}
+
+            //     li {}
+            // }
         }
     }
 }
