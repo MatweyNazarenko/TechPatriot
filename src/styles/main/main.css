@@ -434,14 +434,14 @@ input {
 }
 .persons__card .text h3 {
   font-family: "Google Sans", sans-serif;
-  color: #F4F8F5;
+  color: #f4f8f5;
   font-weight: 600;
   font-size: 1.5rem;
   transition: 0.2s;
 }
 .persons__card .text p {
   font-family: "Google Sans", sans-serif;
-  color: #F4F8F5;
+  color: #f4f8f5;
   font-weight: 400;
   font-size: 1.15rem;
 }
@@ -468,6 +468,48 @@ input {
   border-radius: 6px;
   border: solid 1px #292524;
   padding: 6px 12px;
+}
+
+.detail {
+  height: 100vh;
+}
+.detail__rightCards .card {
+  align-items: end;
+}
+.detail__group {
+  display: flex;
+  flex-direction: column;
+  gap: 50px 0;
+  width: 30vw;
+}
+.detail__group .card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #0c1210;
+  padding: 40px 45px;
+  border-radius: 16px;
+}
+.detail__group .card h3 {
+  font-family: "Google Sans", sans-serif;
+  font-weight: 700;
+  color: #f4f8f5;
+  font-size: 2rem;
+}
+.detail__group .card p {
+  font-size: 1.1rem;
+  font-family: "Google Sans", sans-serif;
+  font-weight: 400;
+  color: #f4f8f5;
+}
+.detail__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+}
+.detail__content__img {
+  display: none;
 }
 
 .quiz__navigation {

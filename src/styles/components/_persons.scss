@@ -1,4 +1,4 @@
-@use '../base/variables'as *;
+@use "../base/variables" as *;
 
 .persons {
     display: flex;
@@ -16,7 +16,7 @@
         background-color: #0c1210;
         padding: 20px 30px;
         border-radius: 15px;
-        transition: .3s;
+        transition: 0.3s;
         border: solid transparent 2px;
         transform: scale(1);
         .img {
@@ -24,7 +24,7 @@
             img {
                 -webkit-user-drag: none;
                 user-select: none;
-                transition: .3s ease-out;
+                transition: 0.3s ease-out;
                 object-fit: cover;
             }
         }
@@ -36,11 +36,10 @@
             .img {
                 img {
                     scale: 1.05;
-
                 }
             }
-            .text{
-                h3{
+            .text {
+                h3 {
                     color: #69b87d;
                 }
             }
@@ -86,15 +85,15 @@
 
             h3 {
                 font-family: $font-family;
-                color: #F4F8F5;
+                color: #f4f8f5;
                 font-weight: 600;
                 font-size: 1.5rem;
-                transition: .2s;
+                transition: 0.2s;
             }
 
             p {
                 font-family: $font-family;
-                color: #F4F8F5;
+                color: #f4f8f5;
                 font-weight: 400;
                 font-size: 1.15rem;
             }
@@ -125,6 +124,50 @@
                     padding: 6px 12px;
                 }
             }
+        }
+    }
+}
+
+.detail {
+    height: 100vh;
+    &__rightCards{
+        .card{
+            align-items: end;
+        }
+    }
+    &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 50px 0;
+        width: 30vw;
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background-color: #0c1210;
+            padding: 40px 45px;
+            border-radius: 16px;
+            h3 {
+                font-family: $font-family;
+                font-weight: 700;
+                color: #f4f8f5;
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.1rem;
+                font-family: $font-family;
+                font-weight: 400;
+                color: #f4f8f5;
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100vh;
+        &__img {
+            display: none;
         }
     }
 }

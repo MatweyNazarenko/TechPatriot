@@ -176,69 +176,356 @@ export const personsList = [
     life: '1999-1999',
     place: 'Poland/Minsk',
     contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
-  },
-  {
-    image: null,
-    id: crypto.randomUUID(),
-    name: 'Ivan Ivanovich',
-    about: 'Like drawing',
-    life: '1999-1999',
-    place: 'Poland/Minsk',
-    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
-  },
-  {
-    image: null,
-    id: crypto.randomUUID(),
-    name: 'Ivan Ivanovich',
-    about: 'Like drawing',
-    life: '1999-1999',
-    place: 'Poland/Minsk',
-    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
-  },
-  {
-    image: null,
-    id: crypto.randomUUID(),
-    name: 'Ivan Ivanovich',
-    about: 'Like drawing',
-    life: '1999-1999',
-    place: 'Poland/Minsk',
-    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
-  },
-  {
-    image: null,
-    id: crypto.randomUUID(),
-    name: 'Ivan Ivanovich',
-    about: 'Like drawing',
-    life: '1999-1999',
-    place: 'Poland/Minsk',
-    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
-  },
-  {
-    image: null,
-    id: crypto.randomUUID(),
-    name: 'Ivan Ivanovich',
-    about: 'Like drawing',
-    life: '1999-1999',
-    place: 'Poland/Minsk',
-    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
-  },
-  {
-    image: null,
-    id: crypto.randomUUID(),
-    name: 'Ivan Ivanovich',
-    about: 'Like drawing',
-    life: '1999-1999',
-    place: 'Poland/Minsk',
-    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
-  },
-  {
-    image: null,
-    id: crypto.randomUUID(),
-    name: 'Ivan Ivanovich',
-    about: 'Like drawing',
-    life: '1999-1999',
-    place: 'Poland/Minsk',
-    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
-  },
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
 
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
+  {
+    image: null,
+    id: crypto.randomUUID(),
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
+  {
+    image: null,
+    id: crypto.randomUUID(),
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
+  {
+    image: null,
+    id: crypto.randomUUID(),
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
+  {
+    image: null,
+    id: crypto.randomUUID(),
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
+  {
+    image: null,
+    id: crypto.randomUUID(),
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
+  {
+    image: null,
+    id: crypto.randomUUID(),
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
+  {
+    image: null,
+    id: crypto.randomUUID(),
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
+  {
+    image: null,
+    id: crypto.randomUUID(),
+    name: 'Ivan Ivanovich',
+    about: 'Like drawing',
+    life: '1999-1999',
+    place: 'Poland/Minsk',
+    contribution: ['jjjj', 'kkkkk', 'mmmmmmm'],
+    info: [
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+
+      {
+        title: "Start of lify",
+        text: "In the start of he was great"
+      },
+    ]
+  },
 ]
