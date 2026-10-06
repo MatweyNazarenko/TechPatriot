@@ -2,16 +2,84 @@
 
 .persons {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px 20px;
+    padding: 30px 20px;
 
     &__card {
+        cursor: pointer;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         position: relative;
-        background-color: #121a16;
+        background-color: #0c1210;
+        padding: 20px 30px;
+        border-radius: 15px;
+        transition: .3s;
+        border: solid transparent 2px;
+        transform: scale(1);
+        .img {
+            user-select: none;
+            img {
+                -webkit-user-drag: none;
+                user-select: none;
+                transition: .3s ease-out;
+                object-fit: cover;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.03);
+            border: solid #485c4d 2px;
+            box-shadow: 0 0 32px 6px rgba(71, 107, 80, 0.25);
+            .img {
+                img {
+                    scale: 1.05;
+
+                }
+            }
+            .text{
+                h3{
+                    color: #69b87d;
+                }
+            }
+        }
+
+        .about {
+            user-select: none;
+
+            .time {
+                font-family: $font-family;
+                color: #d9e0db;
+                font-weight: 400;
+                font-size: 0.9rem;
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                background-color: #42584b;
+                border-radius: 6px;
+                border: solid 1px #292524;
+                padding: 2px 6px;
+            }
+
+            .place {
+                font-family: $font-family;
+                color: #d9e0db;
+                font-weight: 400;
+                font-size: 0.9rem;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                background-color: #42584b;
+                border-radius: 6px;
+                border: solid 1px #292524;
+                padding: 2px 6px;
+            }
+        }
 
         .text {
+            margin-top: 16px;
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -21,20 +89,42 @@
                 color: #F4F8F5;
                 font-weight: 600;
                 font-size: 1.5rem;
+                transition: .2s;
             }
 
             p {
                 font-family: $font-family;
-                color: #17211C;
+                color: #F4F8F5;
                 font-weight: 400;
                 font-size: 1.15rem;
             }
 
-            // ul {
-            //     .title {}
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
 
-            //     li {}
-            // }
+                .title {
+                    font-family: $font-family;
+                    font-weight: 400;
+                    color: #8d8a85;
+                    font-size: 1rem;
+                    background-color: transparent;
+                    padding: 0;
+                    border: none;
+                    border-radius: 0;
+                }
+
+                li {
+                    font-family: $font-family;
+                    color: #c1ccc4;
+                    font-weight: 400;
+                    background-color: #1d2721;
+                    border-radius: 6px;
+                    border: solid 1px #292524;
+                    padding: 6px 12px;
+                }
+            }
         }
     }
 }

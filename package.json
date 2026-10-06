@@ -16,7 +16,7 @@
     "@types/three": "^0.185.4",
     "accept": "^3.1.3",
     "drei": "^0.0.45",
-    "framer-motion": "^13.2.0",
+    "framer-motion": "^13.5.1",
     "gsap": "^3.15.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",

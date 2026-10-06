@@ -352,16 +352,82 @@ input {
 
 .persons {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 30px 20px;
+  padding: 30px 20px;
 }
 .persons__card {
+  cursor: pointer;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: #121a16;
+  background-color: #0c1210;
+  padding: 20px 30px;
+  border-radius: 15px;
+  transition: 0.3s;
+  border: solid transparent 2px;
+  transform: scale(1);
+}
+.persons__card .img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.persons__card .img img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 0.3s ease-out;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.persons__card:hover {
+  transform: scale(1.03);
+  border: solid #485c4d 2px;
+  box-shadow: 0 0 32px 6px rgba(71, 107, 80, 0.25);
+}
+.persons__card:hover .img img {
+  scale: 1.05;
+}
+.persons__card:hover .text h3 {
+  color: #69b87d;
+}
+.persons__card .about {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.persons__card .about .time {
+  font-family: "Google Sans", sans-serif;
+  color: #d9e0db;
+  font-weight: 400;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: #42584b;
+  border-radius: 6px;
+  border: solid 1px #292524;
+  padding: 2px 6px;
+}
+.persons__card .about .place {
+  font-family: "Google Sans", sans-serif;
+  color: #d9e0db;
+  font-weight: 400;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: #42584b;
+  border-radius: 6px;
+  border: solid 1px #292524;
+  padding: 2px 6px;
 }
 .persons__card .text {
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -371,12 +437,37 @@ input {
   color: #F4F8F5;
   font-weight: 600;
   font-size: 1.5rem;
+  transition: 0.2s;
 }
 .persons__card .text p {
   font-family: "Google Sans", sans-serif;
-  color: #17211C;
+  color: #F4F8F5;
   font-weight: 400;
   font-size: 1.15rem;
+}
+.persons__card .text ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.persons__card .text ul .title {
+  font-family: "Google Sans", sans-serif;
+  font-weight: 400;
+  color: #8d8a85;
+  font-size: 1rem;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+.persons__card .text ul li {
+  font-family: "Google Sans", sans-serif;
+  color: #c1ccc4;
+  font-weight: 400;
+  background-color: #1d2721;
+  border-radius: 6px;
+  border: solid 1px #292524;
+  padding: 6px 12px;
 }
 
 .quiz__navigation {
