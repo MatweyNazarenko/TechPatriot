@@ -1,14 +1,15 @@
-import { taskPersons } from "../../../library/tasksData"
+import { taskPersons } from "../../../../library/tasksData"
+import QuizQuestion from "./QuizQuestion"
 
 
-const Navigation = () => {
+const Navigation = ({tasksType}) => {
     return (
         <div className="quiz__navigation">
             <h3>Навигация</h3>
-            {taskPersons.map((item,index)=>{
+            {tasksType.map((item,index)=>{
                 return(
                     <div className="taskItem">
-                        {index}
+                        {index+1}
                     </div>
                 )
             })}
@@ -21,7 +22,7 @@ const Navigation = () => {
 const Quiz = () => {
     return (
         <div className="quiz">
-            <Navigation></Navigation>
+            <QuizQuestion taskNumber={1}></QuizQuestion>
         </div>
     )
 }

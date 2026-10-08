@@ -6,7 +6,7 @@ import TimelineSlide from "./TimelineSlide";
 
 const Timeline = ()=>{
 
-    const { activeEvent, selectEvent } = useTimelineState(timeTags);
+    const { activeEvent, selectEvent } = useTimelineState(timeTags, timeTags[0].id);
 
     return(
         <>

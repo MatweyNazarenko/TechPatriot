@@ -92,6 +92,13 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
   text-decoration: none;
 }
 
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
 footer, header, nav, section, main {
   display: block;
 }
@@ -472,6 +479,17 @@ input {
 
 .detail {
   height: 100vh;
+  position: relative;
+}
+.detail__exit {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+.detail__exit svg {
+  color: #fff;
+  width: 32px;
+  height: auto;
 }
 .detail__rightCards .card {
   align-items: end;
@@ -514,12 +532,35 @@ input {
 
 .quiz__navigation {
   display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.quiz__navigation h3 {
+  font-family: "Google Sans", sans-serif;
+  font-weight: 500;
+  color: #d9e0db;
+  font-size: 1rem;
 }
 .quiz__navigation .taskItem {
+  cursor: pointer;
   font-family: "Google Sans", sans-serif;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 0.9rem;
   color: #718078;
+  background-color: #1d2721;
+  border-radius: 50%;
+  padding: 12px 16px;
+}
+.quiz__question span {
+  display: inline-block;
+  color: #d9e0db;
+  font-family: "Google Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  background-color: #42584b;
+  padding: 12px;
+  border-radius: 8px;
+  border: solid 2px #1c2721;
 }
 
 html {

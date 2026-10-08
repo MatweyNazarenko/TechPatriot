@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import unknown from '/img/unknown.png';
 import { useEffect } from "react";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const DetailedCard = (props) => {
 
@@ -38,6 +39,12 @@ const DetailedCard = (props) => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
+                        <button 
+                            className="detail__exit"
+                            onClick={()=>setSelectedId(null)}
+                        >
+                            <IoMdCloseCircleOutline />
+                        </button>
                         <div
                             className="detail__content"
                         >

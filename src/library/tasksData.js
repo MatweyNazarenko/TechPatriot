@@ -1,127 +1,26 @@
+import { number } from 'framer-motion';
+
 export const taskPersons = [
-    {
-        question: 'What do you do?',
-        answers: [
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-        ]
-    },
-    {
-        question: 'What did you do?',
-        answers: [
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-        ]
-    },
-    {
-        question: 'What did you do?',
-        answers: [
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-        ]
-    },
-    {
-        question: 'What did you do?',
-        answers: [
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-        ]
-    },
-    {
-        question: 'What did you do?',
-        answers: [
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-            {
-                text: 'HHHHH',
-                isTrue: true,
-            },
-        ]
-    },
-]
+	{
+		question: 'What do you do?',
+		correctAnswer: 2,
+		answers: [
+			{
+				number: 1,
+				text: 'HHHHH',
+			},
+			{
+				number: 2,
+				text: 'HHHHH',
+			},
+			{
+				number: 3,
+				text: 'HHHHH',
+			},
+			{
+				number: 4,
+				text: 'HHHHH',
+			},
+		],
+	},
+];

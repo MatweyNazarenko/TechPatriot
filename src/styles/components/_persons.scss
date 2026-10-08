@@ -130,6 +130,17 @@
 
 .detail {
     height: 100vh;
+    position: relative;
+    &__exit{
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        svg{
+            color: #fff;
+            width: 32px;
+            height: auto;
+        }
+    }
     &__rightCards{
         .card{
             align-items: end;

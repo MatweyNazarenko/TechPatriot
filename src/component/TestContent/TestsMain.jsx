@@ -1,4 +1,4 @@
-import Quiz from './tasks/Quiz';
+import Quiz from './tasks/Quiz/Quiz';
 
 
 const TestsMain = ()=>{
