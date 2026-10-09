@@ -1,24 +1,32 @@
-@use '../base/variables' as *;
-@use '../components/combs';
-@use '../base/reset';
-@use '../components/timeline';
-@use '../components/view3d';
-@use '../components/persons';
-@use '../components/tests';
-html{
+@use "../base/variables" as *;
+@use "../components/combs";
+@use "../base/reset";
+@use "../components/timeline";
+@use "../components/view3d";
+@use "../components/persons";
+@use "../components/tests";
+html {
     font-size: 16px;
 }
 
-body{
+::selection {
+    background-color: #69b87d;;
+    color: #ffffff;
+    text-shadow: none;
+}
+
+body {
+    overflow-x: hidden;
+    scrollbar-width: none;
     height: 100vh;
     scroll-behavior: smooth;
     background: $main-back;
 }
-#root{
+#root {
     height: 100vh;
 }
 
-.titleMain{
+.titleMain {
     font-size: 3rem;
     font-weight: 600;
     color: $content-text;

@@ -569,7 +569,21 @@ html {
   font-size: 16px;
 }
 
+::-moz-selection {
+  background-color: #69b87d;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #69b87d;
+  color: #ffffff;
+  text-shadow: none;
+}
+
 body {
+  overflow-x: hidden;
+  scrollbar-width: none;
   height: 100vh;
   scroll-behavior: smooth;
   background: #151816;
