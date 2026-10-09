@@ -1,4 +1,4 @@
-import { useFBX } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { useEffect, useRef, useMemo } from 'react';
 import { SkeletonUtils } from 'three-stdlib';
@@ -8,9 +8,9 @@ const ModelObject = (props) => {
 
 	const modelRef = useRef(null);
 
-	const fbx = useFBX(path);
+	const glb = useGLTF(path);
 
-	const scene = useMemo(() => SkeletonUtils.clone(fbx), [fbx]);
+	const scene = useMemo(() => SkeletonUtils.clone(glb.scene), [glb.scene]);
 
 	const scaleTracker = useRef(overallScale * 0.1);
 
@@ -36,9 +36,11 @@ const ModelObject = (props) => {
 				ref={modelRef}
 				{...props}
 				object={scene}
-				scale={[overallScale, overallScale, overallScale]}
 			/>
 	);
 };
+
+
+
 
 export default ModelObject;

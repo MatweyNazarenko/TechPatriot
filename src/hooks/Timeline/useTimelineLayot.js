@@ -73,9 +73,17 @@ const useTimelineLayot = (props) => {
 
 
   let minRowGap = 4;
+  
 
-  let basePillHeight = Math.floor(( containerHeight - (maxRowsCount * minRowGap) ) / maxRowsCount );
 
+  //высота
+  // let basePillHeight = Math.floor(( containerHeight - (maxRowsCount * minRowGap) ) / maxRowsCount );
+  const pillHeightStart = Math.floor(
+    (containerHeight - maxRowsCount * 8) / maxRowsCount
+  );
+
+  // Ограничиваем высоту от MIN (например 18px) до TARGET (28px)
+  const basePillHeight = Math.max(Math.min(pillHeightStart, 58), 38);
 
   const requiredTotalHeight = maxRowsCount * (basePillHeight + minRowGap);
   if (requiredTotalHeight > containerHeight) {

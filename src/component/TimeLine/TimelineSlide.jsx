@@ -6,7 +6,7 @@ import { formatEventDate } from "../../library/timeControl";
 import TimelineAxe from "./TimelineAxe";
 import EventPill from "./EventPill";
 
-const height_timeline = 350;
+const height_timeline = 300;
 
 const TimelineSlide = (props) => {
   const{
@@ -35,7 +35,7 @@ const TimelineSlide = (props) => {
           className="top"
           style={{
             width: `${totalWidth}px`,
-            height: `350px`,
+            height: `${height_timeline}px`,
           }}
         > 
 

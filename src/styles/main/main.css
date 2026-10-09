@@ -165,6 +165,8 @@ input {
   justify-content: center;
 }
 .timeline__image img {
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 700px;
   height: 400px;
 }

@@ -30,7 +30,7 @@ const ModelViewer = (props) => {
 						<CurrentModel
 							key={safeItem}
 							path={currentComponent.path}
-							overallScale={0.01}
+							overallScale={1}
 						></CurrentModel>
 					)}
 					<Environment preset='sunset'></Environment>
