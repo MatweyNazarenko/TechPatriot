@@ -56,16 +56,16 @@ const DetailedCard = (props) => {
                                 transition={{ duration: 0.4, ease: 'easeInOut' }}
                             >
                                 <div className="card">
+                                    <h3>{person.info[0].title}</h3>
+                                    <p>{person.info[0].text}</p>
+                                </div>
+                                <div className="card">
                                     <h3>{person.info[1].title}</h3>
                                     <p>{person.info[1].text}</p>
                                 </div>
                                 <div className="card">
                                     <h3>{person.info[2].title}</h3>
                                     <p>{person.info[2].text}</p>
-                                </div>
-                                <div className="card">
-                                    <h3>{person.info[3].title}</h3>
-                                    <p>{person.info[3].text}</p>
                                 </div>
                             </motion.div>
                             <motion.div
@@ -86,16 +86,16 @@ const DetailedCard = (props) => {
                                 transition={{ duration: 0.4, ease: 'easeInOut' }}
                             >
                                 <div className="card">
+                                    <h3>{person.info[3].title}</h3>
+                                    <p>{person.info[3].text}</p>
+                                </div>
+                                <div className="card">
                                     <h3>{person.info[4].title}</h3>
                                     <p>{person.info[4].text}</p>
                                 </div>
                                 <div className="card">
                                     <h3>{person.info[5].title}</h3>
                                     <p>{person.info[5].text}</p>
-                                </div>
-                                <div className="card">
-                                    <h3>{person.info[6].title}</h3>
-                                    <p>{person.info[6].text}</p>
                                 </div>
                             </motion.div>
                         </div>
