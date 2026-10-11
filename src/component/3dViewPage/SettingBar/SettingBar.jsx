@@ -30,7 +30,7 @@ const SettingBar = (props) => {
             </div>
             <div className={styles.settingPanel}>
                 <div className={styles.rotEnable}>
-                    <h3 className={styles.title}>Speed</h3>
+                    <h3 className={styles.title}>Скорость</h3>
                     <input type="checkbox" id="rotEnable" onChange={autoRotateChange} checked={controlStates.autoRotate}/>
                     <label htmlFor="rotEnable">
                         <div className={styles.checker}>

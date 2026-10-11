@@ -1,5 +1,7 @@
 import ModelObject from "../component/3dViewPage/3d/ModelObject";
-import { GiResize } from "react-icons/gi";
+import { GiResize, GiWeight, GiFactory } from "react-icons/gi";
+import { BsSpeedometer } from "react-icons/bs";
+import { IoPeopleSharp } from "react-icons/io5";
 export const timeTags = [
   {
     id: crypto.randomUUID(),
@@ -84,61 +86,61 @@ export const modelsList = [
     model: ModelObject,
     info: [
       {
-        title: 'Size',
-        content: '240x240x240',
+        title: 'Размер',
+        content: '8100x3000x2700',
         icon: () => <GiResize />,
       },
       {
-        title: 'Size',
-        content: '240x240x240',
-        icon: () => <GiResize />,
+        title: 'Масса',
+        content: '32 тонны',
+        icon: () => <GiWeight />,
       },
       {
-        title: 'Size',
-        content: '240x240x240',
-        icon: () => <GiResize />,
+        title: 'Скорость',
+        content: '54 км/ч',
+        icon: () => <BsSpeedometer />,
       },
       {
-        title: 'Size',
-        content: '240x240x240',
-        icon: () => <GiResize />,
+        title: 'Производство',
+        content: '30000 единиц',
+        icon: () => <GiFactory />,
       },
       {
-        title: 'Size',
-        content: '240x240x240',
-        icon: () => <GiResize />,
+        title: 'Экипаж',
+        content: '5-7 человек',
+        icon: () => <IoPeopleSharp />,
       }
     ],
   },
   {
-    title: 'Hello, World!',
-    path: '/models/t-34-85.glb',
+    title: 'БМ-13("Катюша")',
+    path: '/models/bm-13.glb',
     model: ModelObject,
     info: [
       {
         title: 'Size',
-        content: '24x240x240',
+        content: '6780x2270x2880',
         icon: () => <GiResize />,
       },
       {
-        title: 'Size',
-        content: '240x24990x240',
-        icon: () => <GiResize />,
+        title: 'Масса',
+        content: '8.4 тонны',
+        icon: () => <GiWeight />,
       },
       {
-        title: 'Size',
-        content: '240x240x240',
-        icon: () => <GiResize />,
+        title: 'Скорость',
+        content: '40 км/ч',
+        icon: () => <BsSpeedometer />,
       },
       {
-        title: 'Size',
-        content: '240x240x240',
-        icon: () => <GiResize />,
+        title: 'Производство',
+        content: '7000 единиц',
+        icon: () => <GiFactory />,
       },
       {
-        title: 'Size',
-        content: '240x240x240',
-        icon: () => <GiResize />,
+        title: 'Экипаж',
+        content: '4-5 человек',
+        icon: () => <IoPeopleSharp />,
       }
     ],
   },
