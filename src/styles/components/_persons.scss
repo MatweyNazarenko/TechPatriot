@@ -1,4 +1,4 @@
-@use "../base/variables" as *;
+@use "../base/variables"as *;
 
 .persons {
     display: flex;
@@ -19,9 +19,13 @@
         transition: 0.3s;
         border: solid transparent 2px;
         transform: scale(1);
+
         .img {
             user-select: none;
+
             img {
+                width: 325px;
+                height: 425px;
                 -webkit-user-drag: none;
                 user-select: none;
                 transition: 0.3s ease-out;
@@ -33,11 +37,13 @@
             transform: scale(1.03);
             border: solid #485c4d 2px;
             box-shadow: 0 0 32px 6px rgba(71, 107, 80, 0.25);
+
             .img {
                 img {
                     scale: 1.05;
                 }
             }
+
             .text {
                 h3 {
                     color: #69b87d;
@@ -115,6 +121,7 @@
                 }
 
                 li {
+                    max-width: 325px;
                     font-family: $font-family;
                     color: #c1ccc4;
                     font-weight: 400;
@@ -131,26 +138,31 @@
 .detail {
     height: 100vh;
     position: relative;
-    &__exit{
+
+    &__exit {
         position: fixed;
         top: 20px;
         left: 20px;
-        svg{
+
+        svg {
             color: #fff;
             width: 32px;
             height: auto;
         }
     }
-    &__rightCards{
-        .card{
+
+    &__rightCards {
+        .card {
             align-items: end;
         }
     }
+
     &__group {
         display: flex;
         flex-direction: column;
         gap: 50px 0;
         width: 30vw;
+
         .card {
             display: flex;
             flex-direction: column;
@@ -158,13 +170,15 @@
             background-color: #0c1210;
             padding: 40px 45px;
             border-radius: 16px;
+
             h3 {
                 font-family: $font-family;
                 font-weight: 700;
                 color: #f4f8f5;
                 font-size: 2rem;
             }
-            p{
+
+            p {
                 font-size: 1.1rem;
                 font-family: $font-family;
                 font-weight: 400;
@@ -172,13 +186,20 @@
             }
         }
     }
+
     &__content {
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 100vh;
-        &__img {
-            display: none;
+        padding: 30px 0;
+    }
+
+    &__img {
+        img {
+            width: 450px;
+            height: auto;
         }
+
     }
 }

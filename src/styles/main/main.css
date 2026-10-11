@@ -385,6 +385,8 @@ input {
           user-select: none;
 }
 .persons__card .img img {
+  width: 325px;
+  height: 425px;
   -webkit-user-drag: none;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -470,6 +472,7 @@ input {
   border-radius: 0;
 }
 .persons__card .text ul li {
+  max-width: 325px;
   font-family: "Google Sans", sans-serif;
   color: #c1ccc4;
   font-weight: 400;
@@ -527,9 +530,11 @@ input {
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  padding: 30px 0;
 }
-.detail__content__img {
-  display: none;
+.detail__img img {
+  width: 450px;
+  height: auto;
 }
 
 .quiz__navigation {
