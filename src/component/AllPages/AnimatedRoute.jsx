@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router";
+import { Route, Routes, useLocation, Navigate } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import MainPage from "../MainPage/MainPage";
 import View3dPage from "../3dViewPage/View3dPage";
