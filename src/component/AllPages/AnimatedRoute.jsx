@@ -21,7 +21,9 @@ const AnimatedRoute = (props) => {
 
     return (
         <AnimatePresence mode="wait">
+            
             <Routes location={location} key={location.pathname}>
+                <Route path="/index.html" element={<Navigate to="/" replace />} />
                 <Route
                     path="/"
                     element={
