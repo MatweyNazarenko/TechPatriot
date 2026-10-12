@@ -1,7 +1,8 @@
 .settingBar {
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: max(16px, env(safe-area-inset-top, 0px));
+    right: max(16px, env(safe-area-inset-right, 0px));
+    z-index: 20;
     border: 1px solid rgba(87, 119, 97, 0.541);
     border-radius: 1.5rem;
     padding: 0.75rem 0.5rem;
@@ -11,7 +12,12 @@
     justify-content: center;
     transition: .3s;
     pointer-events: auto;
-    &:hover {
+    max-height: calc(100dvh - 32px);
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    &:hover,
+    &:focus-within {
         .mainBtn {
             transform: rotate(180deg);
             margin-bottom: 1rem;
@@ -24,6 +30,22 @@
             transform: translateY(0);
             max-height: 100%;
         }
+    }
+}
+
+@media (min-width: 901px) {
+    .settingBar {
+        top: 50px;
+        right: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .settingBar {
+        top: max(12px, env(safe-area-inset-top, 0px));
+        right: max(12px, env(safe-area-inset-right, 0px));
+        padding: 0.5rem 0.35rem;
+        border-radius: 1.15rem;
     }
 }
 

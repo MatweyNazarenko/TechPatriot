@@ -35,11 +35,23 @@ export const clamp = (value, min, max)=> {
 }
 
 
-export const formatEventDate = (startDate, endDate)=>{
+export const formatEventDate = (startDate, endDate, { withYear = false } = {}) => {
+    if (!startDate) return "";
+
+    const year = startDate.getFullYear();
     const startStr = `${startDate.getDate()} ${monthsNames[startDate.getMonth()]}`;
 
-    if(!endDate || startDate.getTime() === endDate.getTime()) return startStr;
+    if (!endDate || startDate.getTime() === endDate.getTime()) {
+        return withYear ? `${startStr} ${year}` : startStr;
+    }
 
+    const sameYear = startDate.getFullYear() === endDate.getFullYear();
     const endStr = `${endDate.getDate()} ${monthsNames[endDate.getMonth()]}`;
-    return `${startStr} - ${endStr}`;
-}
+    const range = `${startStr} — ${endStr}`;
+
+    if (withYear || !sameYear) {
+        return `${range} ${endDate.getFullYear()}`;
+    }
+
+    return range;
+};

@@ -1,6 +1,6 @@
 import { IoIosArrowUp } from "react-icons/io";
 
-import styles from './SettingBar.module.css';
+import styles from './SettingBar.module.scss';
 
 const SettingBar = (props) => {
 
