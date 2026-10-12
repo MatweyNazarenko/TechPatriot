@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import MainPage from "../MainPage/MainPage";
 import View3dPage from "../3dViewPage/View3dPage";
 import Timeline from "../TimeLine/Timeline";
-import PersonsMain from "../Persons/personsMain";
+import PersonsMain from "../Persons/PersonsMain";
 import TestsMain from "../TestContent/TestsMain";
 const AnimatedRoute = (props) => {
     const {
