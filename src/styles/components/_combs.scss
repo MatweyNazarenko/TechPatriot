@@ -6,7 +6,7 @@
     width: min(300px, 72vw);
     height: min(300px, 72vw);
     flex-shrink: 0;
-
+    user-select: none;
     &__background {
         position: absolute;
         width: 100%;
@@ -42,6 +42,7 @@
         transform: perspective(600px) rotateY(0deg) translate(-50%, -50%);
 
         h3 {
+            user-select: all;
             font-weight: 600;
             font-size: clamp(1.1rem, 3.5vw, 1.5rem);
             color: $content-text;
@@ -53,12 +54,14 @@
         gap: clamp(10px, 3vw, 20px);
 
         h3 {
+            user-select: all;
             font-weight: 600;
             font-size: clamp(1.1rem, 3.5vw, 1.5rem);
             color: $content-text;
         }
 
         p {
+            user-select: all;
             max-width: 200px;
             margin: 0 auto;
             font-weight: 400;
@@ -118,21 +121,6 @@
 @media (hover: hover) {
     .comb {
         &:hover {
-            .comb__front {
-                transform: perspective(600px) rotateY(180deg) translate(-50%, -50%);
-            }
-
-            .comb__back {
-                transform: perspective(600px) rotateY(0deg) translate(-50%, -50%);
-            }
-        }
-    }
-}
-
-@media (hover: none) {
-    .comb {
-        &:active,
-        &:focus-visible {
             .comb__front {
                 transform: perspective(600px) rotateY(180deg) translate(-50%, -50%);
             }

@@ -1,4 +1,6 @@
 import { number } from 'framer-motion';
+import Statement from '../component/TestContent/tasks/Statement/Statement';
+import { bool } from 'three/tsl';
 
 export const taskPersons = [
 	{
@@ -24,3 +26,11 @@ export const taskPersons = [
 		],
 	},
 ];
+
+
+export const taskStatement = [
+	{
+		statement: 'Великая Китайская стена — единственная достопримечательность на Земле, видимая с Луны.',
+		bool: true,
+	}
+]

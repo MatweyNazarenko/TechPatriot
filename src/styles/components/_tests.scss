@@ -1,4 +1,4 @@
-@use '../base/variables' as *;
+@use "../base/variables" as *;
 
 .quiz {
     width: 100%;
@@ -72,6 +72,83 @@
             span {
                 padding: 10px;
             }
+        }
+    }
+}
+
+.statement {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    &__card {
+        user-select: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border: 3px solid #1b221e;
+        border-radius: 1.5rem;
+        padding: 150px 50px;
+        background-color: #203027;
+        max-width: 500px;
+        box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+        p {
+            font-family: $font-family;
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 140%;
+            color: #fff;
+        }
+        span {
+            display: flex;
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 0.88rem;
+            color: #a1a1aa;
+        }
+    }
+    &__backs {
+        display: flex;
+        justify-content: space-between;
+        user-select: none;
+        .back {
+            height: 100vh;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            p {
+                transition: .3s;
+                font-family: $font-family;
+                font-weight: 600;
+                font-size: 0.88rem;
+                text-transform: uppercase;
+                color: #a1a1aa;
+            }
+        }
+        .leftBack{
+            border-right: solid 2px #1b221e;
+        }
+        .rightBack{
+            border-left: solid 2px #1b221e;
+        }
+        .leftBack.active{
+            p{
+                color: rgb(252, 165, 165);
+                scale: 1.1
+            }
+            background-color: rgba(239, 68, 68, 0.14);
+        }
+        .rightBack.active{
+            p{
+                color: rgb(134, 239, 172);
+                scale: 1.1
+            }
+            background-color: rgba(34, 197, 94, 0.14);
         }
     }
 }

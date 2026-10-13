@@ -5,6 +5,7 @@ import View3dPage from "../3dViewPage/View3dPage";
 import Timeline from "../TimeLine/Timeline";
 import PersonsMain from "../Persons/PersonsMain";
 import TestsMain from "../TestContent/TestsMain";
+import Statement from "../TestContent/tasks/Statement/Statement";
 const AnimatedRoute = (props) => {
     const {
         pageVariants = {
@@ -91,6 +92,20 @@ const AnimatedRoute = (props) => {
                             transition={pageTransition}
                         >
                             <TestsMain></TestsMain>
+                        </motion.div>
+                    }
+                />
+                <Route
+                    path="/statement"
+                    element={
+                        <motion.div
+                            variants={pageVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            transition={pageTransition}
+                        >
+                            <Statement></Statement>
                         </motion.div>
                     }
                 />
