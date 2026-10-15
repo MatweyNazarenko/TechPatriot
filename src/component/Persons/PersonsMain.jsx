@@ -2,11 +2,12 @@
 import { personsList } from "../../library/data";
 import PersonCard from "./PersonCard";
 import DetailedCard from "./DetailedCard";
-import { useState } from "react";
+import { useContext } from "react";
+import { CardContext } from "../../context/CardContext";
 
 const PersonsMain = () => {
 
-    const [selectedId, setSelectedId] = useState(null);
+    const {selectedId, setSelectedId} = useContext(CardContext);
 
     const chosenPerson = personsList.find((item) => item.id === selectedId)
 

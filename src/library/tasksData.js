@@ -1,36 +1,77 @@
-import { number } from 'framer-motion';
-import Statement from '../component/TestContent/tasks/Statement/Statement';
-import { bool } from 'three/tsl';
-
 export const taskPersons = [
-	{
-		question: 'What do you do?',
-		correctAnswer: 2,
-		answers: [
-			{
-				number: 1,
-				text: 'HHHHH',
-			},
-			{
-				number: 2,
-				text: 'HHHHH',
-			},
-			{
-				number: 3,
-				text: 'HHHHH',
-			},
-			{
-				number: 4,
-				text: 'HHHHH',
-			},
-		],
-	},
+    {
+        question: "What do you do?",
+        correctAnswer: 2,
+        answers: [
+            {
+                number: 1,
+                text: "HHHHH",
+            },
+            {
+                number: 2,
+                text: "HHHHH",
+            },
+            {
+                number: 3,
+                text: "HHHHH",
+            },
+            {
+                number: 4,
+                text: "HHHHH",
+            },
+        ],
+    },
 ];
 
-
 export const taskStatement = [
-	{
-		statement: 'Великая Китайская стена — единственная достопримечательность на Земле, видимая с Луны.',
-		bool: true,
-	}
-]
+    {
+        statement:
+            "Реактивная система БМ-13 («Катюша») была принята на вооружение накануне начала Великой Отечественной войны.",
+        bool: true,
+    },
+    {
+        statement:
+            "Великая Китайская стена — единственный объект на Земле, который виден с поверхности Луны невооружённым глазом.",
+        bool: false,
+    },
+    {
+        statement:
+            "Автоматическую сварку танковой брони под флюсом внедрил академик Евгений Патон.",
+        bool: true,
+    },
+    {
+        statement:
+            "ЭВМ «Колосс» была создана в Германии для управления ракетными пусками V-2.",
+        bool: false,
+    },
+    {
+        statement:
+            "Первый отечественный антибиотик военного времени назывался Крустозин.",
+        bool: true,
+    },
+    {
+        statement:
+            "Первый искусственный ядерный реактор Chicago Pile-1 запустили в Москве в 1943 году.",
+        bool: false,
+    },
+    {
+        statement:
+            "Ракета V-2 стала первой в мире успешно запущенной баллистической ракетой.",
+        bool: true,
+    },
+    {
+        statement:
+            "Модернизированный Т-34-85 получил 85-мм пушку, чтобы бороться с «Тиграми» и «Пантерами».",
+        bool: true,
+    },
+    {
+        statement:
+            "Первый акваланг успешно испытали Жак-Ив Кусто и Эмиль Ганьян в 1943 году.",
+        bool: true,
+    },
+    {
+        statement:
+            "Экипаж танка Т-34-85 состоял всего из трёх человек.",
+        bool: false,
+    },
+];

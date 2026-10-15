@@ -78,30 +78,50 @@
 
 .statement {
     height: 100vh;
+    height: 100dvh;
     width: 100%;
     position: relative;
-    &__card {
-        user-select: none;
+    overflow: hidden;
+
+    &__stage {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        padding: 24px;
+        z-index: 2;
+    }
+
+    &__card {
+        pointer-events: auto;
+        user-select: none;
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 20px;
         border: 3px solid #1b221e;
         border-radius: 1.5rem;
-        padding: 150px 50px;
+        padding: 56px 40px;
         background-color: #203027;
-        max-width: 500px;
+        width: min(500px, 100%);
         box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+        cursor: grab;
+        touch-action: pan-y;
+
+        &:active {
+            cursor: grabbing;
+        }
+
         p {
             font-family: $font-family;
             font-weight: 600;
-            font-size: 1.5rem;
+            font-size: clamp(1.15rem, 2.5vw, 1.5rem);
             line-height: 140%;
             color: #fff;
         }
+
         span {
             display: flex;
             font-family: $font-family;
@@ -110,45 +130,147 @@
             color: #a1a1aa;
         }
     }
+
+
+
+    &__result {
+        pointer-events: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+        background-color: #203027;
+        border: 3px solid #1b221e;
+        border-radius: 1.5rem;
+        padding: 48px 40px;
+        width: min(420px, 100%);
+        box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+
+        h2 {
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            color: #fff;
+        }
+
+        p {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 1.15rem;
+            color: #d9e0db;
+        }
+
+        button,
+        a {
+            font-family: $font-family;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 999px;
+            padding: 12px 22px;
+            min-width: 160px;
+            text-align: center;
+        }
+
+        button {
+            background: #7a9a82;
+            color: #0f1612;
+        }
+
+        a {
+            color: #a8c4b1;
+            border: 1px solid rgba(122, 154, 130, 0.4);
+        }
+    }
+
     &__backs {
         display: flex;
         justify-content: space-between;
         user-select: none;
+        height: 100%;
+
         .back {
+            position: relative;
             height: 100vh;
+            height: 100dvh;
             width: 30%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            gap: 8px;
+            overflow: hidden;
+
+            .back__glow {
+                position: absolute;
+                inset: 0;
+                pointer-events: none;
+            }
+
             p {
-                transition: .3s;
+                position: relative;
+                z-index: 1;
+                transition: 0.3s;
                 font-family: $font-family;
                 font-weight: 600;
                 font-size: 0.88rem;
                 text-transform: uppercase;
                 color: #a1a1aa;
             }
+
+            span {
+                position: relative;
+                z-index: 1;
+                font-family: $font-family;
+                font-size: 0.75rem;
+                color: #718078;
+            }
         }
-        .leftBack{
+
+        .leftBack {
             border-right: solid 2px #1b221e;
-        }
-        .rightBack{
-            border-left: solid 2px #1b221e;
-        }
-        .leftBack.active{
-            p{
+
+            .back__glow {
+                background-color: rgba(239, 68, 68, 0.14);
+            }
+
+            &:hover p,
+            &:focus-visible p {
                 color: rgb(252, 165, 165);
-                scale: 1.1
             }
-            background-color: rgba(239, 68, 68, 0.14);
         }
-        .rightBack.active{
-            p{
-                color: rgb(134, 239, 172);
-                scale: 1.1
+
+        .rightBack {
+            border-left: solid 2px #1b221e;
+
+            .back__glow {
+                background-color: rgba(34, 197, 94, 0.14);
             }
-            background-color: rgba(34, 197, 94, 0.14);
+
+            &:hover p,
+            &:focus-visible p {
+                color: rgb(134, 239, 172);
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .statement {
+        &__backs .back {
+            width: 22%;
+
+            span {
+                display: none;
+            }
+        }
+
+        &__card {
+            padding: 40px 24px;
+        }
+
+        &__result {
+            padding: 36px 24px;
         }
     }
 }

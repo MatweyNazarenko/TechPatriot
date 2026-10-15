@@ -23,6 +23,7 @@ body {
     min-height: 100dvh;
     scroll-behavior: smooth;
     background: $main-back;
+    position: relative;
 }
 
 #root {
@@ -35,8 +36,24 @@ body {
     font-weight: 600;
     color: $content-text;
     text-align: center;
-    margin-top: 1.5rem;
-    padding: 0 1rem;
+    padding: 1.5rem 1rem 0 1rem;
+}
+
+.toHome{
+    position: absolute;
+    padding: 5px;
+    background-color: #304035;
+    border: solid 2px #7A9A82;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    display: inline-flex;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    svg{
+        color: #7A9A82;
+    }
 }
 
 @media (max-width: 768px) {
