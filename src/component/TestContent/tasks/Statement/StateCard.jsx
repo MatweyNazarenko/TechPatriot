@@ -1,13 +1,22 @@
+import { motion } from 'framer-motion';
+
 const StateCard = (props) => {
-    const{
+    const {
         statement,
-        num
-    }=props;
+        num,
+        swipe
+    } = props;
+
+    
+
     return (
-        <div className="statement__card">
-            <span>Утверждение {num+1}</span>
+        <motion.div
+            className="statement__card"
+            {...swipe.dragProps}
+        >
+            <span>Утверждение {num + 1}</span>
             <p>{statement}</p>
-        </div>
+        </motion.div>
     )
 
 }
