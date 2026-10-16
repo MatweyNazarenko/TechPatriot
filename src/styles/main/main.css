@@ -52,17 +52,17 @@
   gap: clamp(10px, 3vw, 20px);
 }
 .comb__back h3 {
-  -webkit-user-select: all;
-     -moz-user-select: all;
-          user-select: all;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   font-weight: 600;
   font-size: clamp(1.1rem, 3.5vw, 1.5rem);
   color: #e2eee6;
 }
 .comb__back p {
-  -webkit-user-select: all;
-     -moz-user-select: all;
-          user-select: all;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   max-width: 200px;
   margin: 0 auto;
   font-weight: 400;
@@ -1047,6 +1047,13 @@ input {
   position: relative;
   overflow: hidden;
 }
+.statement__isCorrect {
+  font-family: "Google Sans", sans-serif;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, -50%);
+}
 .statement__stage {
   position: absolute;
   inset: 0;
@@ -1070,10 +1077,9 @@ input {
   border-radius: 1.5rem;
   padding: 56px 40px;
   background-color: #203027;
-  width: min(500px, 100%);
+  width: min(500px, 60%);
   box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
   cursor: grab;
-  touch-action: pan-y;
 }
 .statement__card:active {
   cursor: grabbing;
@@ -1081,7 +1087,7 @@ input {
 .statement__card p {
   font-family: "Google Sans", sans-serif;
   font-weight: 600;
-  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-size: clamp(0.85rem, 2.5vw, 1.5rem);
   line-height: 140%;
   color: #fff;
 }
@@ -1089,7 +1095,7 @@ input {
   display: flex;
   font-family: "Google Sans", sans-serif;
   font-weight: 500;
-  font-size: 0.88rem;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
   color: #a1a1aa;
 }
 .statement__result {

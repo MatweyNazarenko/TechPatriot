@@ -54,14 +54,14 @@
         gap: clamp(10px, 3vw, 20px);
 
         h3 {
-            user-select: all;
+            user-select: none;
             font-weight: 600;
             font-size: clamp(1.1rem, 3.5vw, 1.5rem);
             color: $content-text;
         }
 
         p {
-            user-select: all;
+            user-select: none;
             max-width: 200px;
             margin: 0 auto;
             font-weight: 400;

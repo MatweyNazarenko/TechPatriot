@@ -12,7 +12,6 @@ const PersonsMain = () => {
     const chosenPerson = personsList.find((item) => item.id === selectedId)
 
 
-    console.log(chosenPerson);
 
     return (
         <>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import StateCard from "./StateCard";
 import { taskStatement } from "../../../../library/tasksData";
 import useSwipe from "../../../../hooks/tasks/useSwipe";
+import IsCorrect from "./isCorrect";
 
 const Statement = () => {
     const [index, setIndex] = useState(0);
@@ -76,7 +77,9 @@ const Statement = () => {
                     <p>Правда</p>
                 </motion.button>
             </div>
-
+            <IsCorrect 
+                isCorrect={true}
+            ></IsCorrect>
             <div className="statement__stage">
                 {finished ? (
                     <div className="statement__result">
