@@ -77,9 +77,9 @@ const Statement = () => {
                     <p>Правда</p>
                 </motion.button>
             </div>
-            <IsCorrect 
+            {/* <IsCorrect 
                 isCorrect={true}
-            ></IsCorrect>
+            ></IsCorrect> */}
             <div className="statement__stage">
                 {finished ? (
                     <div className="statement__result">
