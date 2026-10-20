@@ -1285,4 +1285,7 @@ body {
   .titleMain {
     margin-top: 1rem;
   }
+}
+#nl-badge {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
