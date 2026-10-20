@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import StateCard from "./StateCard";
 import { taskStatement } from "../../../../library/tasksData";
 import useSwipe from "../../../../hooks/tasks/useSwipe";
-import IsCorrect from "./isCorrect";
+// import IsCorrect from "./isCorrect";
 
 const Statement = () => {
     const [index, setIndex] = useState(0);
