@@ -1,20 +1,38 @@
+import { useEffect } from "react";
+import { MdClose } from "react-icons/md";
+import { FaCheck } from "react-icons/fa6";
 
+const DURATION = 1500;
 
-const IsCorrect = (props) => {
-    const {
-        isCorrect,
-    } = props;
+const IsCorrect = ({ isCorrect, onExpire }) => {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (onExpire) onExpire();
+        }, DURATION);
+
+        return () => clearTimeout(timer);
+    }, [isCorrect, onExpire]);
 
     return (
         <div
-            style={{
-                color: isCorrect ? 'rgb(134, 239, 172)' : 'rgb(252, 165, 165)'
-            }}
-            className="statement__isCorrect"
+            className={`statement__isCorrect ${isCorrect ? "is-correct" : "is-incorrect"}`}
+            role="status"
+            aria-live="polite"
         >
-            {isCorrect ? 'Правильно' : 'Неправильно'}
+            <div className="statement__isCorrectContent">
+                <span className="statement__isCorrectIcon" aria-hidden="true">
+                    {isCorrect ? <FaCheck /> : <MdClose />}
+                </span>
+                <p>{isCorrect ? "Правильно" : "Неправильно"}</p>
+            </div>
+            <div className="statement__isCorrectTimer">
+                <span
+                    className="statement__isCorrectTimerBar"
+                    style={{ animationDuration: `${DURATION}ms` }}
+                />
+            </div>
         </div>
-    )
-}
+    );
+};
 
 export default IsCorrect;

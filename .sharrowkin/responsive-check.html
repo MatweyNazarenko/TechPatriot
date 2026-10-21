@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>Проверка адаптивности IsCorrect</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                background: #0a0f0c;
+                color: #d9e0db;
+                font-family: monospace;
+            }
+
+            #frame {
+                display: block;
+                margin: 6px;
+                border: 1px solid #3a4a40;
+                background: #000;
+            }
+
+            pre {
+                margin: 6px;
+                font-size: 13px;
+                line-height: 1.35;
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe id="frame" title="statement preview"></iframe>
+        <pre id="log">инициализация…</pre>
+        <script>
+            const log = document.getElementById("log");
+            const frame = document.getElementById("frame");
+            const lines = [];
+            const write = (message) => {
+                lines.push(message);
+                log.textContent = lines.join("\n");
+            };
+
+            const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+            const loadFrame = (width, height) =>
+                new Promise((resolve) => {
+                    frame.width = String(width);
+                    frame.height = String(height);
+                    frame.onload = () => resolve();
+                    frame.src = `/statement?w=${width}&h=${height}`;
+                });
+
+            const measure = (doc, width) => {
+                const badge = doc.querySelector(".statement__isCorrect");
+                if (!badge) return { error: "плашка не найдена" };
+                const rect = badge.getBoundingClientRect();
+                const content = badge.querySelector(".statement__isCorrectContent p");
+                const icon = badge.querySelector(".statement__isCorrectIcon");
+                const iconRect = icon.getBoundingClientRect();
+                const contentRect = content.getBoundingClientRect();
+                return {
+                    left: Math.round(rect.left),
+                    right: Math.round(rect.right),
+                    top: Math.round(rect.top),
+                    bottom: Math.round(rect.bottom),
+                    width: Math.round(rect.width),
+                    height: Math.round(rect.height),
+                    fitsHorizontally: rect.left >= 0 && rect.right <= width,
+                    text: content.textContent,
+                    fontPx: getComputedStyle(content).fontSize,
+                    iconBox: `${Math.round(iconRect.width)}x${Math.round(iconRect.height)}`,
+                    iconCenteredInText:
+                        Math.abs(
+                            (iconRect.top + iconRect.height / 2) - (contentRect.top + contentRect.height / 2)
+                        ) <= 3,
+                    viewport: width,
+                };
+            };
+
+            const answer = async (doc) => {
+                const button = doc.querySelector(".rightBack");
+                if (!button) return false;
+                button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+                return true;
+            };
+
+            const waitFor = async (doc, selector, timeout = 20000) => {
+                const started = Date.now();
+                while (Date.now() - started < timeout) {
+                    const node = doc.querySelector(selector);
+                    if (node) return node;
+                    await sleep(200);
+                }
+                return null;
+            };
+
+            (async () => {
+                const sizes = [
+                    { width: 320, height: 480 },
+                    { width: 375, height: 667 },
+                    { width: 768, height: 1024 },
+                    { width: 900, height: 800 },
+                    { width: 640, height: 360 },
+                ];
+
+                for (const size of sizes) {
+                    await loadFrame(size.width, size.height);
+                    const doc = frame.contentDocument;
+                    if (!doc) {
+                        write(`--- ${size.width}x${size.height}: нет доступа к документу кадра ---`);
+                        continue;
+                    }
+                    const ready = await waitFor(doc, ".statement");
+                    write(`--- ${size.width}x${size.height}: карточка ${ready ? "загружена" : "не найдена"} ---`);
+                    if (!ready) continue;
+                    const clicked = await answer(doc);
+                    await sleep(350);
+                    const result = measure(doc, size.width);
+                    write(`--- ${size.width}x${size.height} (клик: ${clicked ? "да" : "нет"}) ---`);
+                    write(JSON.stringify(result));
+                    await sleep(1400);
+                }
+
+                write("готово");
+            })().catch((error) => write(`ошибка: ${error.message}`));
+        </script>
+    </body>
+</html>

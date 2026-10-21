@@ -53,6 +53,7 @@ const useSwipe = (onSwipe) => {
 
     const reset = useCallback(() => {
         busy.current = false;
+        x.stop();
         x.set(0);
     }, [x]);
 

@@ -2,43 +2,44 @@ import { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import StateCard from "./StateCard";
+import IsCorrect from "./IsCorrect";
 import { taskStatement } from "../../../../library/tasksData";
 import useSwipe from "../../../../hooks/tasks/useSwipe";
-// import IsCorrect from "./isCorrect";
 
 const Statement = () => {
     const [index, setIndex] = useState(0);
     const [score, setScore] = useState(0);
-
+    const [feedback, setFeedback] = useState(null);
 
     const total = taskStatement.length;
     const finished = index >= total;
     const current = !finished ? taskStatement[index] : null;
+
     const handleSwipe = useCallback((direction) => {
         const statement = taskStatement[index];
-        if (!statement) return i;
+        if (!statement) return;
 
         const saidTrue = direction === "right";
-        if (saidTrue === statement.bool) {
+        const answerIsCorrect = saidTrue === statement.bool;
+        setFeedback({ isCorrect: answerIsCorrect, id: Date.now() });
 
+        if (answerIsCorrect) {
             setScore((prev) => prev + 1);
         }
 
-
-        window.setTimeout(() => {
-            setIndex((i) => i + 1);
-        }, 280);
+        setIndex((i) => i + 1);
     }, [index]);
 
     const swipe = useSwipe(handleSwipe);
 
     useEffect(() => {
         swipe.reset();
-    }, [index]);
+    }, [index, swipe]);
 
     const restart = useCallback(() => {
         setScore(0);
         setIndex(0);
+        setFeedback(null);
         swipe.reset();
     }, [swipe]);
 
@@ -55,6 +56,16 @@ const Statement = () => {
 
     return (
         <div className="statement">
+            {/* <div className="statement__progress" aria-label={`Просмотрено ${Math.min(index, total)} из ${total}`}>
+                <div className="statement__progressHeader">
+                    <span>Прогресс просмотра</span>
+                    <strong>{Math.min(index, total)} / {total}</strong>
+                </div>
+                <div className="statement__progressTrack" role="progressbar" aria-valuemin="0" aria-valuemax={total} aria-valuenow={Math.min(index, total)}>
+                    <span style={{ width: `${total ? (Math.min(index, total) / total) * 100 : 0}%` }} />
+                </div>
+            </div> */}
+
             <div className="statement__backs">
                 <motion.button
                     type="button"
@@ -77,9 +88,15 @@ const Statement = () => {
                     <p>Правда</p>
                 </motion.button>
             </div>
-            {/* <IsCorrect 
-                isCorrect={true}
-            ></IsCorrect> */}
+
+            {feedback !== null && (
+                <IsCorrect
+                    key={feedback.id}
+                    isCorrect={feedback.isCorrect}
+                    onExpire={() => setFeedback(null)}
+                />
+            )}
+
             <div className="statement__stage">
                 {finished ? (
                     <div className="statement__result">

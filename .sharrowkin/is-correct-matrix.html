@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>IsCorrect responsive matrix</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 8px;
+                background: #0a0f0c;
+                color: #d9e0db;
+                font-family: monospace;
+            }
+
+            .cell {
+                display: inline-block;
+                vertical-align: top;
+                margin: 4px;
+            }
+
+            .cell span {
+                display: block;
+                font-size: 11px;
+                padding: 2px 0;
+            }
+
+            iframe {
+                border: 1px solid #3a4a40;
+                background: #0a0f0c;
+                display: block;
+            }
+
+            pre {
+                font-size: 12px;
+                line-height: 1.45;
+                white-space: pre-wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="host"></div>
+        <pre id="log">инициализация…</pre>
+        <script>
+            const host = document.getElementById("host");
+            const log = document.getElementById("log");
+            const lines = [];
+            const write = (message) => {
+                lines.push(message);
+                log.textContent = lines.join("\n");
+            };
+            const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+            const sizes = [
+                [320, 480],
+                [360, 640],
+                [414, 896],
+                [768, 1024],
+                [1024, 800],
+                [640, 360],
+            ];
+
+            const frames = sizes.map(([width, height]) => {
+                const cell = document.createElement("div");
+                cell.className = "cell";
+                const label = document.createElement("span");
+                label.textContent = `${width}x${height}`;
+                const frame = document.createElement("iframe");
+                frame.width = String(width);
+                frame.height = String(height);
+                frame.title = `fixture ${width}x${height}`;
+                frame.src = "/.sharrowkin/is-correct-fixture.html";
+                cell.append(label, frame);
+                host.append(cell);
+                return { width, height, frame };
+            });
+
+            (async () => {
+                await sleep(1200);
+
+                for (const { width, height, frame } of frames) {
+                    const doc = frame.contentDocument;
+                    const badge = doc && doc.querySelector(".statement__isCorrect");
+                    if (!badge) {
+                        write(`${width}x${height}: плашка не найдена (документ ${doc ? "есть" : "нет"})`);
+                        continue;
+                    }
+
+                    const text = badge.querySelector(".statement__isCorrectContent p");
+                    const icon = badge.querySelector(".statement__isCorrectIcon");
+                    const rect = badge.getBoundingClientRect();
+                    const textRect = text.getBoundingClientRect();
+                    const iconRect = icon.getBoundingClientRect();
+                    const textStyle = getComputedStyle(text);
+
+                    write(
+                        [
+                            `${width}x${height}`,
+                            `  badge ${Math.round(rect.width)}x${Math.round(rect.height)}`,
+                            `  left ${Math.round(rect.left)} right ${Math.round(rect.right)} fits ${
+                                rect.left >= 0 && rect.right <= width
+                            }`,
+                            `  text "${text.textContent}" ${textStyle.fontSize}`,
+                            `  icon ${Math.round(iconRect.width)}x${Math.round(iconRect.height)} centered ${
+                                Math.abs(
+                                    iconRect.top + iconRect.height / 2 - (textRect.top + textRect.height / 2)
+                                ) <= 3
+                            }`,
+                            `  bottomGap ${Math.round(height - rect.bottom)}px`,
+                            `  opacity ${getComputedStyle(badge).opacity} timerBar ${getComputedStyle(
+                                badge.querySelector(".statement__isCorrectTimerBar")
+                            ).transform}`,
+                        ].join("\n")
+                    );
+                }
+
+                write("готово");
+            })().catch((error) => write(`ошибка: ${error.message}`));
+        </script>
+    </body>
+</html>

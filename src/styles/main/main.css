@@ -1053,6 +1053,7 @@ input {
   left: 50%;
   bottom: 10%;
   transform: translate(-50%, -50%);
+  z-index: 3;
 }
 .statement__stage {
   position: absolute;
