@@ -6,18 +6,30 @@ import IsCorrect from "./IsCorrect";
 import { taskStatement } from "../../../../library/tasksData";
 import useSwipe from "../../../../hooks/tasks/useSwipe";
 
+const randomiseMassive = (array) => {
+    const copy = [...array];
+
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+
+    return copy;
+}
+
+
 const Statement = () => {
     const [index, setIndex] = useState(0);
     const [score, setScore] = useState(0);
-    const [feedback, setFeedback] = useState(null);
 
-    const total = taskStatement.length;
+    const [randomised, setRandomised] = useState(randomiseMassive(taskStatement));
+
+    const total = 10;
     const finished = index >= total;
-    const current = !finished ? taskStatement[index] : null;
-
+    const current = !finished ? randomised[index] : null;
     const handleSwipe = useCallback((direction) => {
-        const statement = taskStatement[index];
-        if (!statement) return;
+        const statement = randomised[index];
+        if (!statement) return i;
 
         const saidTrue = direction === "right";
         const answerIsCorrect = saidTrue === statement.bool;
@@ -27,7 +39,10 @@ const Statement = () => {
             setScore((prev) => prev + 1);
         }
 
-        setIndex((i) => i + 1);
+
+        window.setTimeout(() => {
+            setIndex((i) => i + 1);
+        }, 280);
     }, [index]);
 
     const swipe = useSwipe(handleSwipe);
@@ -41,6 +56,7 @@ const Statement = () => {
         setIndex(0);
         setFeedback(null);
         swipe.reset();
+        setRandomised(randomiseMassive(taskStatement));
     }, [swipe]);
 
     useEffect(() => {
