@@ -22,6 +22,8 @@ const Statement = () => {
     const [index, setIndex] = useState(0);
     const [score, setScore] = useState(0);
 
+
+    const [feedback, setFeedback] = useState(null);
     const [randomised, setRandomised] = useState(randomiseMassive(taskStatement));
 
     const total = 10;
