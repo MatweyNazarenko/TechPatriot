@@ -116,7 +116,7 @@ export const modelsList = [
     model: ModelObject,
     info: [
       {
-        title: 'Size',
+        title: 'Размер',
         content: '6780x2270x2880',
         icon: () => <GiResize />,
       },
@@ -140,6 +140,33 @@ export const modelsList = [
         content: '4-5 человек',
         icon: () => <IoPeopleSharp />,
       }
+    ],
+  },
+  {
+    title: 'ППШ-41',
+    path: '/models/pph-41.glb',
+    model: ModelObject,
+    info: [
+      {
+        title: 'Размер',
+        content: '843x135x271',
+        icon: () => <GiResize />,
+      },
+      {
+        title: 'Масса',
+        content: '3.63 кг (без патронов)',
+        icon: () => <GiWeight />,
+      },
+      {
+        title: 'Скорострельность',
+        content: '900–1000 выстр./мин',
+        icon: () => <BsSpeedometer />,
+      },
+      {
+        title: 'Производство',
+        content: 'около 6млн единиц',
+        icon: () => <GiFactory />,
+      },
     ],
   },
 ];
