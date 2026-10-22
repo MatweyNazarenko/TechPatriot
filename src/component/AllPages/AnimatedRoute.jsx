@@ -6,6 +6,7 @@ import Timeline from "../TimeLine/Timeline";
 import PersonsMain from "../Persons/PersonsMain";
 import TestsMain from "../TestContent/TestsMain";
 import Statement from "../TestContent/tasks/Statement/Statement";
+import Quiz from "../TestContent/tasks/Quiz/Quiz";
 const AnimatedRoute = (props) => {
     const {
         pageVariants = {
