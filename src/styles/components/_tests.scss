@@ -27,18 +27,59 @@
             font-size: 0.9rem;
             color: #718078;
             background-color: #1d2721;
+            border: 1px solid transparent;
             border-radius: 50%;
             padding: 12px 16px;
             min-width: 2.5rem;
             text-align: center;
+            transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+            &:hover {
+                color: #d9e0db;
+                background-color: #26332b;
+            }
+
+            &:focus-visible {
+                outline: 2px solid #7a9a82;
+                outline-offset: 2px;
+            }
+
+            &.is-current {
+                color: #e6efe8;
+                background-color: #2b3a31;
+                border-color: #7a9a82;
+            }
+
+            &.is-correct {
+                color: #d6f2df;
+                background-color: #1f4d33;
+                border-color: #2e6b4a;
+            }
+
+            &.is-wrong {
+                color: #f3d7d7;
+                background-color: #4d1f24;
+                border-color: #7a2a2a;
+            }
         }
+    }
+
+    &__stage {
+        position: relative;
     }
 
     &__question {
         margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
 
-        span {
+        .quiz__label {
+            /* Ярлык — заголовок вопроса, поэтому сбрасываем маргины браузера
+               и возвращаем блоку ширину по тексту. */
+            margin: 0;
             display: inline-block;
+            width: max-content;
             color: #d9e0db;
             font-family: $font-family;
             font-weight: 500;
@@ -50,6 +91,189 @@
             line-height: 1.4;
             max-width: 100%;
         }
+
+        &Text {
+            margin: 0;
+            font-family: $font-family;
+            font-weight: 600;
+            /* px, а не rem: корневой font-size на мобильных уменьшается до 14px. */
+            font-size: clamp(16px, 3vw, 22px);
+            line-height: 1.4;
+            color: #fff;
+        }
+    }
+
+    /* Блок ответа один на вопрос, поэтому результат (is-correct / is-wrong / is-reveal)
+       хранится на контейнере, а не на каждом варианте. */
+    &__answer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    &__option {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        font-family: $font-family;
+        font-weight: 500;
+        font-size: clamp(14px, 2.4vw, 16px);
+        line-height: 1.35;
+        color: #d9e0db;
+        background-color: #1d2721;
+        border: 2px solid #1c2721;
+        border-radius: 12px;
+        padding: 14px 16px;
+        cursor: pointer;
+        transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+        &:hover:not(:disabled) {
+            background-color: #26332b;
+            border-color: #42584b;
+        }
+
+        &:focus-visible {
+            outline: 2px solid #7a9a82;
+            outline-offset: 2px;
+        }
+
+        &:disabled {
+            cursor: default;
+        }
+
+        &Index {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: #42584b;
+            color: #e6efe8;
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: clamp(12px, 2vw, 14px);
+        }
+
+        &Text {
+            font-family: $font-family;
+        }
+    }
+
+    /* Верный ответ: подсвечиваем выбранный вариант. */
+    &__answer.is-correct .quiz__option.is-selected {
+        color: #d6f2df;
+        background-color: #14361f;
+        border-color: #2e6b4a;
+
+        .quiz__optionIndex {
+            background-color: #2e6b4a;
+        }
+    }
+
+    /* Неверный ответ: выбранный вариант красным... */
+    &__answer.is-wrong .quiz__option.is-selected {
+        color: #f3d7d7;
+        background-color: #361414;
+        border-color: #7a2a2a;
+
+        .quiz__optionIndex {
+            background-color: #7a2a2a;
+        }
+    }
+
+    /* ...а правильным показываем, что было верным. */
+    &__answer.is-reveal .quiz__option.is-right {
+        color: #b9e6c6;
+        border-color: #2e6b4a;
+
+        .quiz__optionIndex {
+            background-color: #2e6b4a;
+        }
+    }
+
+    /* Плашка IsCorrect приедена из Statement: здесь она в потоке, под вариантами. */
+    &__feedback {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        min-height: 62px;
+        padding-top: 6px;
+
+        .statement__isCorrect {
+            position: static;
+            bottom: auto;
+            left: auto;
+            transform: none;
+            animation: quizAnswerIn 0.28s ease-out both;
+        }
+    }
+
+    &__result {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        text-align: center;
+        background-color: #203027;
+        border: 3px solid #1b221e;
+        border-radius: 1.5rem;
+        padding: 40px 32px;
+        width: min(420px, 100%);
+        box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
+
+        h2 {
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            color: #fff;
+        }
+
+        p {
+            font-family: $font-family;
+            font-weight: 500;
+            font-size: 1.15rem;
+            color: #d9e0db;
+        }
+
+        button,
+        a {
+            font-family: $font-family;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 999px;
+            padding: 12px 22px;
+            min-width: 160px;
+            text-align: center;
+        }
+
+        button {
+            background: #7a9a82;
+            color: #0f1612;
+            border: none;
+            cursor: pointer;
+        }
+
+        a {
+            color: #a8c4b1;
+            border: 1px solid rgba(122, 154, 130, 0.4);
+        }
+    }
+}
+
+@keyframes quizAnswerIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -68,10 +292,19 @@
 
         &__question {
             margin-top: 16px;
+            gap: 16px;
 
-            span {
+            .quiz__label {
                 padding: 10px;
             }
+        }
+
+        &__answer {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        &__result {
+            padding: 32px 20px;
         }
     }
 }

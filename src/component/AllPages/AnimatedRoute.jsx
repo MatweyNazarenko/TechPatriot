@@ -109,6 +109,20 @@ const AnimatedRoute = (props) => {
                         </motion.div>
                     }
                 />
+              <Route
+                    path="/test"
+                    element={
+                        <motion.div
+                            variants={pageVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            transition={pageTransition}
+                        >
+                            <Quiz></Quiz>
+                        </motion.div>
+                    }
+                />
             </Routes>
         </AnimatePresence>
     )

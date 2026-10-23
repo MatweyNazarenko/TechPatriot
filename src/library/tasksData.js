@@ -1,24 +1,83 @@
+// correctAnswer — это number правильного варианта в массиве answers (1..4).
 export const taskPersons = [
     {
-        question: "What do you do?",
+        question: "Кто создал пистолет-пулемёт ППШ-41?",
+        correctAnswer: 3,
+        answers: [
+            { number: 1, text: "Михаил Кошкин" },
+            { number: 2, text: "Алексей Судаев" },
+            { number: 3, text: "Георгий Шпагин" },
+            { number: 4, text: "Андрей Туполев" },
+        ],
+    },
+    {
+        question: "Под руководством кого был создан танк Т-34?",
+        correctAnswer: 1,
+        answers: [
+            { number: 1, text: "Михаил Кошкин" },
+            { number: 2, text: "Евгений Патон" },
+            { number: 3, text: "Николай Бурденко" },
+            { number: 4, text: "Георгий Шпагин" },
+        ],
+    },
+    {
+        question: "Кто внедрил автоматическую сварку танковой брони под флюсом?",
+        correctAnswer: 4,
+        answers: [
+            { number: 1, text: "Андрей Туполев" },
+            { number: 2, text: "Сергей Ильюшин" },
+            { number: 3, text: "Алексей Судаев" },
+            { number: 4, text: "Евгений Патон" },
+        ],
+    },
+    {
+        question: "Кто разработал первый отечественный антибиотик военного времени — крустозин?",
         correctAnswer: 2,
         answers: [
-            {
-                number: 1,
-                text: "HHHHH",
-            },
-            {
-                number: 2,
-                text: "HHHHH",
-            },
-            {
-                number: 3,
-                text: "HHHHH",
-            },
-            {
-                number: 4,
-                text: "HHHHH",
-            },
+            { number: 1, text: "Николай Бурденко" },
+            { number: 2, text: "Зинаида Ермольева" },
+            { number: 3, text: "Евгений Патон" },
+            { number: 4, text: "Михаил Кошкин" },
+        ],
+    },
+    {
+        question: "Как называли реактивную систему залпового огня БМ-13?",
+        correctAnswer: 1,
+        answers: [
+            { number: 1, text: "«Катюша»" },
+            { number: 2, text: "«Андрюша»" },
+            { number: 3, text: "«Валентина»" },
+            { number: 4, text: "«Огонёк»" },
+        ],
+    },
+    {
+        question: "Кто создал бомбардировщик Ту-2?",
+        correctAnswer: 3,
+        answers: [
+            { number: 1, text: "Николай Бурденко" },
+            { number: 2, text: "Сергей Ильюшин" },
+            { number: 3, text: "Андрей Туполев" },
+            { number: 4, text: "Алексей Судаев" },
+        ],
+    },
+    {
+        question: "Какой пистолет-пулемёт сконструировал Алексей Судаев?",
+        correctAnswer: 4,
+        answers: [
+            { number: 1, text: "ППШ-41" },
+            { number: 2, text: "ДП-27" },
+            { number: 3, text: "СВТ-40" },
+            { number: 4, text: "ППС-43" },
+        ],
+    },
+    {
+        question: "Когда реактивная система БМ-13 была принята на вооружение?",
+        correctAnswer: 2,
+        answers: [
+            { number: 1, text: "Летом 1939 года" },
+            { number: 2, text: "За день до начала Великой Отечественной войны" },
+            { number: 3, text: "После битвы за Москву" },
+            { number: 4, text: "В 1945 году" },
         ],
     },
 ];
